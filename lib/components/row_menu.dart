@@ -31,6 +31,7 @@ class RowMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           )),
@@ -52,6 +53,8 @@ class RowMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
+                                                                fontWeight: FontWeight.bold,
+
                               ),
                             ),
                           )),
@@ -73,6 +76,8 @@ class RowMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
+                                                                fontWeight: FontWeight.bold,
+
                               ),
                             ),
                           )),
@@ -94,6 +99,8 @@ class RowMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
+                                                                fontWeight: FontWeight.bold,
+
                               ),
                             ),
                           )),
@@ -115,6 +122,8 @@ class RowMenu extends StatelessWidget {
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
+                                                                fontWeight: FontWeight.bold,
+
                               ),
                             ),
                           )),
