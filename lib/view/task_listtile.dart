@@ -4,10 +4,13 @@ import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/rashifal.dart';
 
 class TaskListTile extends StatelessWidget {
-  const TaskListTile({super.key});
+
+  const TaskListTile({super.key,});
+
 
   @override
   Widget build(BuildContext context) {
+    
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,

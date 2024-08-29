@@ -79,9 +79,9 @@ class _RashifalScreenState extends State<RashifalScreen> {
       setState(() {
         isLoading = false;
       });
+
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +103,7 @@ class _RashifalScreenState extends State<RashifalScreen> {
           ? const Center(child: CircularProgressIndicator())
           : Column(
               children: [
+
                 // Dropdown to select zodiac sign
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -169,7 +170,7 @@ class _RashifalScreenState extends State<RashifalScreen> {
                     ),
                   ),
                 ),
-                // Display selected horoscope
+                // Display selected horoscope,
                 Expanded(
                   child: horoscopes != null && horoscopes!.isNotEmpty
                       ? HoroscopeCard(
@@ -270,6 +271,9 @@ class HoroscopeCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
+
+             
                 // Text(
                 //   horoscope['title'],
                 //   style: const TextStyle(

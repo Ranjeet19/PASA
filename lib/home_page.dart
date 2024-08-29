@@ -10,13 +10,17 @@ import 'package:my_assist/view/task_listtile.dart';
 import 'package:my_assist/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
+  
   const HomePage({super.key});
+
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  
   String greeting = "";
 
   @override
@@ -191,7 +195,7 @@ class _HomePageState extends State<HomePage> {
               // ),
 
               //
-
+              
               const TaskListTile(),
           ],
           ),
