@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.2.1
   lottie: ^3.1.2
   intl: ^0.19.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/logo/
     - assets/menu.png
     - assets/rnzt.jpg
 
