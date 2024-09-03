@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/todo.dart';
 
 class RowMenu extends StatelessWidget {
   const RowMenu({super.key});
@@ -16,25 +17,30 @@ class RowMenu extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(
-                                color: primaryColor,
-                                width: 2,
-                              )),
-                          child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                            child: Text(
-                              "To Do List",
-                              style: TextStyle(
-                                color: primaryColor,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> TodoListApp()));
+                        },
+                        child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(
+                                  color: primaryColor,
+                                  width: 2,
+                                )),
+                            child: const Padding(
+                              padding:
+                                  EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                              child: Text(
+                                "To Do",
+                                style: TextStyle(
+                                  color: primaryColor,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          )),
+                            )),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
@@ -49,30 +55,7 @@ class RowMenu extends StatelessWidget {
                             padding:
                                 EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                             child: Text(
-                              "Important Date",
-                              style: TextStyle(
-                                color: primaryColor,
-                                fontSize: 14,
-                                                                fontWeight: FontWeight.bold,
-
-                              ),
-                            ),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(
-                                color: primaryColor,
-                                width: 2,
-                              )),
-                          child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                            child: Text(
-                              "Health ",
+                              "Date Reminder",
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
@@ -95,7 +78,7 @@ class RowMenu extends StatelessWidget {
                             padding:
                                 EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                             child: Text(
-                              "To Do",
+                              "Count Down ",
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,
@@ -118,7 +101,30 @@ class RowMenu extends StatelessWidget {
                             padding:
                                 EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                             child: Text(
-                              "Shrestha",
+                              "Health",
+                              style: TextStyle(
+                                color: primaryColor,
+                                fontSize: 14,
+                                                                fontWeight: FontWeight.bold,
+
+                              ),
+                            ),
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border.all(
+                                color: primaryColor,
+                                width: 2,
+                              )),
+                          child: const Padding(
+                            padding:
+                                EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                            child: Text(
+                              "Notes",
                               style: TextStyle(
                                 color: primaryColor,
                                 fontSize: 14,

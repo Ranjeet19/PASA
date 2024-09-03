@@ -10,6 +10,8 @@ import 'package:my_assist/view/task_listtile.dart';
 import 'package:my_assist/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
+
+  // HoroscopeCard horo;
   
   const HomePage({super.key});
 
@@ -19,6 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
 
   
   String greeting = "";

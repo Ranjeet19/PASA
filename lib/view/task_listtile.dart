@@ -1,7 +1,9 @@
 // ignore: file_names
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/rashifal.dart';
+import 'package:my_assist/view/todo.dart';
 
 class TaskListTile extends StatelessWidget {
 
@@ -10,25 +12,11 @@ class TaskListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              "Task To Complete...",
-              style: TextStyle(
-                color: primaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
+
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(
@@ -54,7 +42,7 @@ class TaskListTile extends StatelessWidget {
                     },
                     child: const ListTile(
                       leading: Icon(
-                        Icons.sports_cricket_rounded,
+                        CupertinoIcons.circle_grid_hex_fill,
                         color: primaryColor,
                       ),
                       title: Text(
@@ -62,7 +50,7 @@ class TaskListTile extends StatelessWidget {
                         style: TextStyle(color: primaryColor),
                       ),
                       subtitle: Text(
-                        'john.doe@example.com',
+                        'Read Your Horoscope Here...',
                         style: TextStyle(color: primaryColor),
                       ),
                       trailing: Icon(
@@ -74,33 +62,55 @@ class TaskListTile extends StatelessWidget {
                 ),
               ),
              
+
+
+                 const Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Text(
+              "Task To Complete...",
+              style: TextStyle(
+                color: primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
+             
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: primaryColor,
+                child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TodoListApp()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 2,
+                        color: primaryColor,
+                      ),
+                      color: mobileBackgroundColor,
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    color: mobileBackgroundColor,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const ListTile(
-                    leading: Icon(
-                      Icons.email,
-                      color: primaryColor,
-                    ),
-                    title: Text(
-                      'Email',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    subtitle: Text(
-                      'john.doe@example.com',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    trailing: Icon(
-                      Icons.navigate_next,
-                      color: primaryColor,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.email,
+                        color: primaryColor,
+                      ),
+                      title: Text(
+                        'Todo App',
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      subtitle: Text(
+                        'john.doe@example.com',
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      trailing: Icon(
+                        Icons.navigate_next,
+                        color: primaryColor,
+                      ),
                     ),
                   ),
                 ),
