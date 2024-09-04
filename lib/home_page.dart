@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_assist/view/rashifal.dart';
 import 'package:my_assist/view/row_menu.dart';
 import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';

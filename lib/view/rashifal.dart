@@ -8,10 +8,10 @@ class RashifalScreen extends StatefulWidget {
   const RashifalScreen({super.key});
 
   @override
-  _RashifalScreenState createState() => _RashifalScreenState();
+  RashifalScreenState createState() => RashifalScreenState();
 }
 
-class _RashifalScreenState extends State<RashifalScreen> {
+class RashifalScreenState extends State<RashifalScreen> {
   List<dynamic>? horoscopes;
   bool isLoading = true;
   String selectedSign = "aries"; // Default sign
@@ -246,8 +246,8 @@ class HoroscopeCard extends StatelessWidget {
       // "pisces"
     ];
 
-    final int colorIndex =
-        zodiacSigns.indexOf(selectedSign.toLowerCase()) % colors.length;
+    // final int colorIndex =
+    //     zodiacSigns.indexOf(selectedSign.toLowerCase()) % colors.length;
     final String horoscopeText = horoscope[selectedSign];
 
     return Padding(
