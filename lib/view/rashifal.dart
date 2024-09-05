@@ -75,7 +75,7 @@ class RashifalScreenState extends State<RashifalScreen> {
         throw Exception("Failed to load rashifal data");
       }
     } catch (e) {
-      print("Error: $e");
+      // print("Error: $e");
       setState(() {
         isLoading = false;
       });
@@ -214,37 +214,37 @@ class HoroscopeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> zodiacSigns = [
+    // final List<String> zodiacSigns = [
 
-    'मेष', // Aries
-    'वृष', // Taurus
-    'मिथुन', // Gemini
-    'कर्कट', // Cancer
-    'सिंह', // Leo
-    'कन्या', // Virgo
-    'तुला', // Libra
-    'वृश्चिक', // Scorpio
-    'धनु', // Sagittarius
-    'मकर', // Capricorn
-    'कुम्भ', // Aquarius
-    'मीन', // Pisces
-
-
+    // 'मेष', // Aries
+    // 'वृष', // Taurus
+    // 'मिथुन', // Gemini
+    // 'कर्कट', // Cancer
+    // 'सिंह', // Leo
+    // 'कन्या', // Virgo
+    // 'तुला', // Libra
+    // 'वृश्चिक', // Scorpio
+    // 'धनु', // Sagittarius
+    // 'मकर', // Capricorn
+    // 'कुम्भ', // Aquarius
+    // 'मीन', // Pisces
 
 
-      // "aries",
-      // "taurus",
-      // "gemini",
-      // "cancer",
-      // "leo",
-      // "virgo",
-      // "libra",
-      // "scorpio",
-      // "sagittarius",
-      // "capricorn",
-      // "aquarius",
-      // "pisces"
-    ];
+
+
+    //   // "aries",
+    //   // "taurus",
+    //   // "gemini",
+    //   // "cancer",
+    //   // "leo",
+    //   // "virgo",
+    //   // "libra",
+    //   // "scorpio",
+    //   // "sagittarius",
+    //   // "capricorn",
+    //   // "aquarius",
+    //   // "pisces"
+    // ];
 
     // final int colorIndex =
     //     zodiacSigns.indexOf(selectedSign.toLowerCase()) % colors.length;

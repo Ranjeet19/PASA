@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:my_assist/utils/colors.dart';
@@ -35,10 +35,10 @@ class TodoListScreen extends StatefulWidget {
   const TodoListScreen({super.key});
 
   @override
-  _TodoListScreenState createState() => _TodoListScreenState();
+  TodoListScreenState createState() => TodoListScreenState();
 }
 
-class _TodoListScreenState extends State<TodoListScreen> {
+class TodoListScreenState extends State<TodoListScreen> {
   final List<Todo> _tasks = [];
   final TextEditingController _taskController = TextEditingController();
   String _selectedPriority = 'Medium';
@@ -198,33 +198,31 @@ class _TodoListScreenState extends State<TodoListScreen> {
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Container(
-                      child: ListTile(
-                        title: Text(
-                          _tasks[index].title,
-                          style: const TextStyle(
-                              color: primaryColor, fontSize: 18),
+                    child: ListTile(
+                      title: Text(
+                        _tasks[index].title,
+                        style: const TextStyle(
+                            color: primaryColor, fontSize: 18),
+                      ),
+                      subtitle: Text(
+                        'Priority: ${_tasks[index].priority} - Due: ${DateFormat('yyyy-MM-dd').format(_tasks[index].dueDate)}',
+                        style: const TextStyle(
+                          color: primaryColor,
+                          fontSize: 10,
                         ),
-                        subtitle: Text(
-                          'Priority: ${_tasks[index].priority} - Due: ${DateFormat('yyyy-MM-dd').format(_tasks[index].dueDate)}',
-                          style: const TextStyle(
-                            color: primaryColor,
-                            fontSize: 10,
+                      ),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.blue),
+                            onPressed: () => _editTask(index),
                           ),
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.edit, color: Colors.blue),
-                              onPressed: () => _editTask(index),
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.delete, color: Colors.red),
-                              onPressed: () => _removeTask(index),
-                            ),
-                          ],
-                        ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () => _removeTask(index),
+                          ),
+                        ],
                       ),
                     ),
                   );

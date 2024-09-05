@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 
 
 class CountdownApp extends StatelessWidget {
+  const CountdownApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,17 +16,19 @@ class CountdownApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.grey,
       ),
-      home: TaskListScreen(),
+      home: const TaskListScreen(),
     );
   }
 }
 
 class TaskListScreen extends StatefulWidget {
+  const TaskListScreen({super.key});
+
   @override
-  _TaskListScreenState createState() => _TaskListScreenState();
+  TaskListScreenState createState() => TaskListScreenState();
 }
 
-class _TaskListScreenState extends State<TaskListScreen> {
+class TaskListScreenState extends State<TaskListScreen> {
   List<Map<String, dynamic>> tasks = [];
 
   void _addTask(String title, String description, DateTime date) {
@@ -67,11 +71,11 @@ class _TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Countdown Tasks'),
+        title: const Text('Event Countdown'),
         centerTitle: true,
       ),
       body: tasks.isEmpty
-          ? Center(child: Text('No tasks yet, add some!', style: TextStyle(fontSize: 18)))
+          ? const Center(child: Text('No Event yet, add some!', style: TextStyle(fontSize: 18)))
           : ListView.builder(
               itemCount: tasks.length,
               itemBuilder: (context, index) {
@@ -84,7 +88,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _navigateToAddTask(context),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -111,17 +115,17 @@ class CountdownTile extends StatefulWidget {
   final VoidCallback onEdit;
   final VoidCallback onDelete;
 
-  CountdownTile({
+  const CountdownTile({super.key, 
     required this.task,
     required this.onEdit,
     required this.onDelete,
   });
 
   @override
-  _CountdownTileState createState() => _CountdownTileState();
+  CountdownTileState createState() => CountdownTileState();
 }
 
-class _CountdownTileState extends State<CountdownTile> {
+class CountdownTileState extends State<CountdownTile> {
   late Timer _timer;
   late DateTime _taskDate;
   String _countdown = '';
@@ -131,7 +135,7 @@ class _CountdownTileState extends State<CountdownTile> {
     super.initState();
     _taskDate = widget.task['date'];
     _updateCountdown();
-    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       _updateCountdown();
     });
   }
@@ -164,11 +168,11 @@ class _CountdownTileState extends State<CountdownTile> {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
-        side: BorderSide(color: Colors.white, width: 2),
+        side: const BorderSide(color: Colors.white, width: 2),
       ),
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -180,7 +184,7 @@ class _CountdownTileState extends State<CountdownTile> {
                 Expanded(
                   child: Text(
                     _countdown,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -190,11 +194,11 @@ class _CountdownTileState extends State<CountdownTile> {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.edit, color: Colors.blue),
+                      icon: const Icon(Icons.edit, color: Colors.blue),
                       onPressed: widget.onEdit,
                     ),
                     IconButton(
-                      icon: Icon(Icons.delete, color: Colors.red),
+                      icon: const Icon(Icons.delete, color: Colors.red),
                       onPressed: widget.onDelete,
                     ),
                   ],
@@ -206,7 +210,7 @@ class _CountdownTileState extends State<CountdownTile> {
               padding: const EdgeInsets.only(top: 10.0),
               child: Text(
                 widget.task['title'],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white70,
@@ -218,7 +222,7 @@ class _CountdownTileState extends State<CountdownTile> {
               padding: const EdgeInsets.only(top: 5.0),
               child: Text(
                 widget.task['description'],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.white54,
                 ),
@@ -235,13 +239,13 @@ class AddTaskScreen extends StatefulWidget {
   final Map<String, dynamic>? task;
   final Function(String, String, DateTime) onSave;
 
-  AddTaskScreen({this.task, required this.onSave});
+  const AddTaskScreen({super.key, this.task, required this.onSave});
 
   @override
-  _AddTaskScreenState createState() => _AddTaskScreenState();
+  AddTaskScreenState createState() => AddTaskScreenState();
 }
 
-class _AddTaskScreenState extends State<AddTaskScreen> {
+class AddTaskScreenState extends State<AddTaskScreen> {
   final _formKey = GlobalKey<FormState>();
   String _taskTitle = '';
   String _taskDescription = '';
@@ -276,7 +280,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             children: [
               TextFormField(
                 initialValue: _taskTitle,
-                decoration: InputDecoration(labelText: 'Task Title'),
+                decoration: const InputDecoration(labelText: 'Task Title'),
                 validator: (value) {
                   if (value!.isEmpty) return 'Please enter a task title';
                   return null;
@@ -285,20 +289,20 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   _taskTitle = value;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
                 initialValue: _taskDescription,
-                decoration: InputDecoration(labelText: 'Task Description'),
+                decoration: const InputDecoration(labelText: 'Task Description'),
                 onChanged: (value) {
                   _taskDescription = value;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ListTile(
                 title: Text(
                   'Select Date: ${DateFormat.yMMMd().format(_selectedDate)}',
                 ),
-                trailing: Icon(Icons.calendar_today),
+                trailing: const Icon(Icons.calendar_today),
                 onTap: () async {
                   DateTime? pickedDate = await showDatePicker(
                     context: context,
@@ -313,7 +317,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   }
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _submit,
                 child: Text(widget.task == null ? 'Save Task' : 'Update Task'),
