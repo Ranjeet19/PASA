@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/home_page.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/hidden_drawer.dart';
 
 void main() {
   runApp(const MyApp());
