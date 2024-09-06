@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_assist/view/drawer.dart';
@@ -10,20 +9,17 @@ import 'package:my_assist/view/task_listtile.dart';
 import 'package:my_assist/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
-
   // HoroscopeCard horo;
-  
-  const HomePage({super.key});
 
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  
+  bool _showLotieAnimation = true;
 
-  
   String greeting = "";
 
   @override
@@ -54,7 +50,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: null,
+      appBar: null,
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -72,8 +68,11 @@ class _HomePageState extends State<HomePage> {
                         height: 30,
                         width: 30,
                         child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Draw()));
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Draw()));
                             },
                             child: Image.asset(
                               'assets/menu.png',
@@ -138,48 +137,29 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topRight,
                     height: 80,
                     width: 80,
-                    child: InkWell(
-                      onTap: () {
-                        // print("hello dokiee");
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog(
-                              child: Container(
-                                constraints: BoxConstraints(
-                                  maxWidth:
-                                      MediaQuery.of(context).size.width * 0.8,
-                                ),
-                                padding: const EdgeInsets.all(6),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text('Hello$greeting',
-                                          style: const TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold)),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: const Icon(CupertinoIcons.multiply, color: Colors.red,),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                      child: Lottie.network(
-                          "https://lottie.host/aba94f25-d547-41e1-8e62-a34d042fd100/7WjtTT027G.json",
-                          alignment: Alignment.center),
-                    ),
+                    child: GestureDetector(
+                        onTap: () {
+                          // print("hello dokiee");
+                          setState(() {
+                            _showLotieAnimation = false;
+                          });
+
+                          Future.delayed(const Duration(seconds: 4),(){
+                            setState(() {
+                              _showLotieAnimation = true;
+                            });
+                          });
+                        },
+                        child: _showLotieAnimation
+                            ? Lottie.asset("../assets/lottie/bot1.json",
+                                alignment: Alignment.center)
+                            : Lottie.asset(
+                                "../assets/lottie/bot2.json",
+                                alignment: Alignment.center,
+                                width: 200,
+                                height: 200,
+                                fit: BoxFit.fill,
+                              )),
                   )
                 ],
               ),
@@ -187,7 +167,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-           const StaggerdView(),
+              const StaggerdView(),
               const SizedBox(
                 height: 20,
               ),
@@ -201,9 +181,9 @@ class _HomePageState extends State<HomePage> {
               // ),
 
               //
-              
+
               const TaskListTile(),
-          ],
+            ],
           ),
         ),
       ),

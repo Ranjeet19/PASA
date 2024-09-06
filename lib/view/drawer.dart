@@ -52,7 +52,7 @@ class Draw extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              "${'Helping Every body'}",
+              '- Aiming to Helping Every body',
               style: TextStyle(
                   fontFamily: 'cursive',
                   color: Colors.white,
