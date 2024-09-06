@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_assist/view/hidden_drawer.dart';
+import 'package:my_assist/view/drawer.dart';
 import 'package:my_assist/view/row_menu.dart';
 import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+       appBar: null,
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         width: 30,
                         child: InkWell(
                             onTap: (){
-                              // Navigator.push(context, MaterialPageRoute(builder: (context)=>Draw()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Draw()));
                             },
                             child: Image.asset(
                               'assets/menu.png',

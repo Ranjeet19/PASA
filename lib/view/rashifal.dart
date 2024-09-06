@@ -87,6 +87,7 @@ class RashifalScreenState extends State<RashifalScreen> {
     return Scaffold(
       backgroundColor: mobileBackgroundColor,
       appBar: AppBar(
+        
         backgroundColor: mobileBackgroundColor,
         leading: InkWell(
             onTap: () {
