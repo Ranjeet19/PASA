@@ -172,16 +172,6 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
 
-              // This call is for Rahsifal part
-              // Container(
-              //   color: Colors.red,
-              //   height: 800,
-              //   width: double.infinity,
-              //   child:  RashifalScreen(),
-              // ),
-
-              //
-
               const TaskListTile(),
             ],
           ),

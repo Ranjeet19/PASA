@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:my_assist/utils/colors.dart';
 
 class StaggerdView extends StatelessWidget {
@@ -8,7 +7,7 @@ class StaggerdView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding:  const EdgeInsets.only(top: 8.0),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10),
         height: 220,
@@ -27,12 +26,10 @@ class StaggerdView extends StatelessWidget {
                 color: mobileBackgroundColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Column(
+              child: const Column(
                 children: [
-                  Lottie.network(
-                      "https://lottie.host/aba94f25-d547-41e1-8e62-a34d042fd100/7WjtTT027G.json",
-                      alignment: Alignment.center),
-                  const Text(
+                  
+                   Text(
                     "HEllo all",
                     style: TextStyle(
                       color: primaryColor,
@@ -82,14 +79,18 @@ class StaggerdView extends StatelessWidget {
                       height: 105,
                       width: 85,
                       decoration: BoxDecoration(
+                        
                         border: Border.all(
                           width: 2,
                           color: primaryColor,
                         ),
                         color: mobileBackgroundColor,
                         borderRadius: BorderRadius.circular(15),
+
+                        
                       ),
-                    ),
+                      child:  Image.asset("../assets/icon/locker.png", color: primaryColor, )),
+                  
                   ],
                 ),
               ],
