@@ -151,10 +151,10 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         child: _showLotieAnimation
-                            ? Lottie.asset("../assets/lottie/bot1.json",
+                            ? Lottie.asset("assets/lottie/bot1.json",
                                 alignment: Alignment.center)
                             : Lottie.asset(
-                                "../assets/lottie/bot2.json",
+                                "assets/lottie/bot2.json",
                                 alignment: Alignment.center,
                                 width: 200,
                                 height: 200,
