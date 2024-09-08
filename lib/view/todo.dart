@@ -232,17 +232,20 @@ class TodoListScreenState extends State<TodoListScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: mobileBackgroundColor,
-        foregroundColor: primaryColor,
-        onPressed: () => _showTaskDialog(),
-        shape: const StadiumBorder(
-          side: BorderSide(
-            color: Colors.white, // White border around the button
-            width: 3.0, // Border width
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 10, right: 5),
+        child: FloatingActionButton(
+          backgroundColor: mobileBackgroundColor,
+          foregroundColor: primaryColor,
+          onPressed: () => _showTaskDialog(),
+          shape: const StadiumBorder(
+            side: BorderSide(
+              color: Colors.white, // White border around the button
+              width: 3.0, // Border width
+            ),
           ),
+          child: const Icon(Icons.add),
         ),
-        child: const Icon(Icons.add),
       ),
     );
   }

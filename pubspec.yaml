@@ -41,6 +41,12 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   http: ^1.2.2
   hidden_drawer_menu: ^3.0.1
+  hive: ^2.2.3
+  path_provider: ^2.1.4
+  hive_flutter: ^1.1.0
+  flutter_slidable: ^3.1.1
+  uuid: ^4.5.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
