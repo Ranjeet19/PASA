@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor, // Set global background color here
       ),
 
-      home:  ProfileView(),
+      home:  HomePage(),
     );
   }
 }

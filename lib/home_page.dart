@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_assist/view/drawer.dart';
+import 'package:my_assist/view/profile.dart';
 import 'package:my_assist/view/row_menu.dart';
 import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';
@@ -100,67 +101,129 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20),
-                    child: CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage("assets/rnzt.jpg")),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Text(
-                        greeting,
-                        style: const TextStyle(
-                          fontFamily: 'cursive',
-                          fontWeight: FontWeight.bold, // Bold weight
-                          fontSize: 16,
-                          color: primaryColor,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ProfileView()));
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: primaryColor, width: 3),
+                                borderRadius: BorderRadius.circular(100)),
+                            child: const CircleAvatar(
+                                radius: 25,
+                                backgroundImage: AssetImage("assets/rnzt.jpg")),
+                          ),
                         ),
                       ),
-                      const Text(
-                        "Ranjeet Shrestha",
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold, // Bold weight
-                          fontSize: 24,
-                        ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            greeting,
+                            style: const TextStyle(
+                              fontFamily: 'cursive',
+                              fontWeight: FontWeight.bold, // Bold weight
+                              fontSize: 14,
+                              color: primaryColor,
+                            ),
+                          ),
+                          const Text(
+                            "Ranjeet Shrestha",
+                            style: TextStyle(
+                              color: primaryColor,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold, // Bold weight
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  Container(
-                    alignment: Alignment.topRight,
+                  SizedBox(
+                    // color: Colors.red,
                     height: 80,
-                    width: 80,
-                    child: GestureDetector(
-                        onTap: () {
-                          // print("hello dokiee");
-                          setState(() {
-                            _showLotieAnimation = false;
-                          });
-
-                          Future.delayed(const Duration(seconds: 4),(){
-                            setState(() {
-                              _showLotieAnimation = true;
-                            });
-                          });
-                        },
-                        child: _showLotieAnimation
-                            ? Lottie.asset("assets/lottie/bot1.json",
-                                alignment: Alignment.center)
-                            : Lottie.asset(
-                                "assets/lottie/bot2.json",
-                                alignment: Alignment.center,
-                                width: 200,
-                                height: 200,
-                                fit: BoxFit.fill,
+                    width: 100,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Positioned(
+                          right: 70,
+                          top: 1,
+                          child: Container(
+                              // color: const Color.fromRGBO(76, 175, 80, 1),
+                              height: 40,
+                              width: 30,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      "assets/icon/calendar.png",
+                                    )),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.only(
+                                  top: 12,
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  "22",
+                                  style: TextStyle(
+                                      color: mobileBackgroundColor,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )),
                               )),
-                  )
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          // color: Colors.amber,
+                          alignment: Alignment.topRight,
+                          height: 80,
+                          width: 80,
+                          child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  _showLotieAnimation = false;
+                                });
+
+                                Future.delayed(const Duration(seconds: 4), () {
+                                  setState(() {
+                                    _showLotieAnimation = true;
+                                  });
+                                });
+                              },
+                              child: _showLotieAnimation
+                                  ? Lottie.asset("assets/lottie/bot1.json",
+                                      width: 200,
+                                      height: 200,
+                                      alignment: Alignment.bottomRight)
+                                  : Lottie.asset(
+                                      "assets/lottie/bot2.json",
+                                      alignment: Alignment.bottomRight,
+                                      width: 200,
+                                      height: 200,
+                                      fit: BoxFit.fill,
+                                    )),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
               const RowMenu(), // Row menue has been imported as component

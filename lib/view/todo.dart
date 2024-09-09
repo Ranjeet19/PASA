@@ -181,6 +181,14 @@ class TodoListScreenState extends State<TodoListScreen> {
           'To-Do',
           style: TextStyle(color: primaryColor),
         ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.0), // Height of the Divider
+          child: Divider(
+            thickness: 2.0, // Thickness of the Divider (Border)
+            color: primaryColor, // Color of the Divider (Border)
+            height: 1.0, // Space above the Divider
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -201,8 +209,8 @@ class TodoListScreenState extends State<TodoListScreen> {
                     child: ListTile(
                       title: Text(
                         _tasks[index].title,
-                        style: const TextStyle(
-                            color: primaryColor, fontSize: 18),
+                        style:
+                            const TextStyle(color: primaryColor, fontSize: 18),
                       ),
                       subtitle: Text(
                         'Priority: ${_tasks[index].priority} - Due: ${DateFormat('yyyy-MM-dd').format(_tasks[index].dueDate)}',

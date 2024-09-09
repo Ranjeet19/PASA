@@ -1,8 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-
+import 'package:my_assist/utils/colors.dart';
 
 class CountdownApp extends StatelessWidget {
   const CountdownApp({super.key});
@@ -71,11 +70,21 @@ class TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Event Countdown'),
         centerTitle: true,
+        title: const Text('Event Countdown'),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.0), // Height of the Divider
+          child: Divider(
+            thickness: 2.0, // Thickness of the Divider (Border)
+            color: primaryColor, // Color of the Divider (Border)
+            height: 1.0, // Space above the Divider
+          ),
+        ),
       ),
       body: tasks.isEmpty
-          ? const Center(child: Text('No Event yet, add some!', style: TextStyle(fontSize: 18)))
+          ? const Center(
+              child: Text('No Event yet, add some!',
+                  style: TextStyle(fontSize: 18)))
           : ListView.builder(
               itemCount: tasks.length,
               itemBuilder: (context, index) {
@@ -86,9 +95,20 @@ class TaskListScreenState extends State<TaskListScreen> {
                 );
               },
             ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _navigateToAddTask(context),
-        child: const Icon(Icons.add),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 10, right: 5),
+        child: FloatingActionButton(
+          backgroundColor: mobileBackgroundColor,
+          foregroundColor: primaryColor,
+          shape: const StadiumBorder(
+            side: BorderSide(
+              color: primaryColor, // White border around the button
+              width: 3.0, // Border width
+            ),
+          ),
+          onPressed: () => _navigateToAddTask(context),
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }
@@ -115,7 +135,8 @@ class CountdownTile extends StatefulWidget {
   final VoidCallback onEdit;
   final VoidCallback onDelete;
 
-  const CountdownTile({super.key, 
+  const CountdownTile({
+    super.key,
     required this.task,
     required this.onEdit,
     required this.onDelete,
@@ -158,7 +179,8 @@ class CountdownTileState extends State<CountdownTile> {
       if (difference.isNegative) {
         _countdown = 'Expired';
       } else {
-        _countdown = '$days days, $hours hours, $minutes minutes, $seconds seconds';
+        _countdown =
+            '$days days, $hours hours, $minutes minutes, $seconds seconds';
       }
     });
   }
@@ -271,7 +293,8 @@ class AddTaskScreenState extends State<AddTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.task == null ? 'Add Task' : 'Edit Task')),
+      appBar:
+          AppBar(title: Text(widget.task == null ? 'Add Task' : 'Edit Task')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -292,7 +315,8 @@ class AddTaskScreenState extends State<AddTaskScreen> {
               const SizedBox(height: 10),
               TextFormField(
                 initialValue: _taskDescription,
-                decoration: const InputDecoration(labelText: 'Task Description'),
+                decoration:
+                    const InputDecoration(labelText: 'Task Description'),
                 onChanged: (value) {
                   _taskDescription = value;
                 },
@@ -319,6 +343,20 @@ class AddTaskScreenState extends State<AddTaskScreen> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: primaryColor,
+                  backgroundColor: mobileBackgroundColor, // White text color
+                  elevation: 5, // Shadow elevation
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20, vertical: 15), // Padding
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // Rounded corners
+                    side: const BorderSide(
+                      color: primaryColor, // Red border color
+                      width: 2, // Border width
+                    ),
+                  ),
+                ),
                 onPressed: _submit,
                 child: Text(widget.task == null ? 'Save Task' : 'Update Task'),
               ),
