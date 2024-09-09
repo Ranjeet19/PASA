@@ -7,7 +7,7 @@ class StaggerdView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  const EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10),
         height: 220,
@@ -26,17 +26,19 @@ class StaggerdView extends StatelessWidget {
                 color: mobileBackgroundColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: const Column(
-                children: [
-                  
-                   Text(
-                    "HEllo all",
-                    style: TextStyle(
-                      color: primaryColor,
-                    ),
-                  )
-                ],
-              ),
+              // child: Image.asset('assets/rnzt.jpg', fit: BoxFit.cover,),
+
+              
+              // const Column(
+              //   children: [
+              //     Text(
+              //       "HEllo all",
+              //       style: TextStyle(
+              //         color: primaryColor,
+              //       ),
+              //     )
+              //   ],
+              // ),
             ),
             const SizedBox(
               width: 10,
@@ -54,6 +56,7 @@ class StaggerdView extends StatelessWidget {
                     color: mobileBackgroundColor,
                     borderRadius: BorderRadius.circular(15),
                   ),
+
                 ),
                 const SizedBox(
                   height: 10,
@@ -61,36 +64,50 @@ class StaggerdView extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      height: 105,
-                      width: 85,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: primaryColor,
+                        height: 105,
+                        width: 85,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: primaryColor,
+                          ),
+                          color: mobileBackgroundColor,
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        color: mobileBackgroundColor,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Image.asset(
+                            "../assets/icon/exchange.png",
+                            color: primaryColor,
+                            height: 1,
+                            width: 1,
+                          ),
+                        )),
                     const SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      height: 105,
-                      width: 85,
-                      decoration: BoxDecoration(
-                        
-                        border: Border.all(
-                          width: 2,
-                          color: primaryColor,
+                    InkWell(
+                      child: Container(
+                        height: 105,
+                        width: 85,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: primaryColor,
+                          ),
+                          color: mobileBackgroundColor,
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        color: mobileBackgroundColor,
-                        borderRadius: BorderRadius.circular(15),
-
-                        
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10, right: 5, bottom: 10),
+                          child: Image.asset(
+                            '../assets/icon/vault.png',
+                            color: primaryColor,
+                          ),
+                        ),
                       ),
-                      child:  Image.asset("../assets/icon/locker.png", color: primaryColor, )),
-                  
+                    ),
                   ],
                 ),
               ],

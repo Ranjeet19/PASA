@@ -74,10 +74,14 @@ flutter:
   assets:
     - assets/
     - assets/logo/
+    - assets/icon/
     - assets/menu.png
     - assets/rnzt.jpg
     - assets/lottie/bot1.json
     - assets/lottie/bot2.json
+    - assets/icon/exchange.png
+    - assets/icon/vault.png
+
 
     # - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
