@@ -75,7 +75,7 @@ class StaggerdView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(15.0),
                           child: Image.asset(
                             "assets/icon/exchange.png",
                             color: primaryColor,
@@ -99,10 +99,10 @@ class StaggerdView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 10, right: 5, bottom: 10),
+                          padding: const EdgeInsets.all(
+                              15),
                           child: Image.asset(
-                            'assets/icon/vault.png',
+                            '../assets/icon/sign-in.png',
                             color: primaryColor,
                           ),
                         ),

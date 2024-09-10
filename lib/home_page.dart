@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_assist/view/drawer.dart';
@@ -45,6 +46,17 @@ class _HomePageState extends State<HomePage> {
       } else {
         greeting = "Good Night...";
       }
+    });
+  }
+
+  bool _isExpanded = false;
+  double _expandedHeight = 0.0; // initial height when not expanded
+
+  void _toggleExpanded() {
+    setState(() {
+      _isExpanded = !_isExpanded;
+      _expandedHeight =
+          _isExpanded ? 300.0 : 0.0; // Height to expand or collapse to
     });
   }
 
@@ -156,41 +168,39 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     // color: Colors.red,
                     height: 80,
-                    width: 100,
+                    width: 80,
                     child: Stack(
-                      alignment: Alignment.center,
+                      // alignment: Alignment.center,
                       children: [
-                        Positioned(
-                          right: 70,
-                          top: 1,
-                          child: Container(
-                              // color: const Color.fromRGBO(76, 175, 80, 1),
-                              height: 40,
-                              width: 30,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                      "assets/icon/calendar.png",
-                                    )),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.only(
-                                  top: 12,
-                                ),
-                                child: Center(
-                                    child: Text(
-                                  "22",
-                                  style: TextStyle(
-                                      color: mobileBackgroundColor,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                              )),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
+                        // Positioned(
+                        //   right: 80,
+                        //   top: 10,
+                        //   child: Container(
+                        //       // color: const Color.fromRGBO(76, 175, 80, 1),
+                        //       height: 40,
+                        //       width: 40,
+                        //       decoration: const BoxDecoration(
+                        //         image: DecorationImage(
+                        //             fit: BoxFit.cover,
+                        //             image: AssetImage(
+                        //               "assets/icon/calendar.png",
+                        //             )),
+                        //       ),
+                        //       child: const Padding(
+                        //         padding: EdgeInsets.only(
+                        //           top: 12,
+                        //         ),
+                        //         child: Center(
+                        //             child: Text(
+                        //           "22",
+                        //           style: TextStyle(
+                        //               color: mobileBackgroundColor,
+                        //               fontSize: 20,
+                        //               fontWeight: FontWeight.bold),
+                        //         )),
+                        //       )),
+                        // ),
+
                         Container(
                           // color: Colors.amber,
                           alignment: Alignment.topRight,
@@ -230,9 +240,92 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-              const StaggerdView(),
+
+              /////////////
+              ///
+              ///
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // Main GridView (4 containers initially)
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: StaggerdView(),
+                    ),
+
+                    // Curtain Animation Container
+                    ClipRect(
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut,
+                        height:
+                            _expandedHeight, // Animated height to simulate curtain opening/closing
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: 12, // Number of additional containers
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 10.0,
+                              mainAxisSpacing: 10.0,
+                              childAspectRatio: 1.0,
+                            ),
+                            itemBuilder: (context, index) {
+                              return Container(
+                                decoration: BoxDecoration(
+                                  color: mobileBackgroundColor,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  border: Border.all(color:primaryColor),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(Icons
+                                        .access_alarm,color: Colors.white,), // Change icon accordingly
+                                    const SizedBox(height: 8),
+                                    Text(
+                                        'Label ${index + 40}', style: TextStyle(color: Colors.white),), // Adjust for index
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // Down/Up Arrow to Toggle,
+
+                    InkWell(
+                      onTap:_toggleExpanded ,
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        child: _isExpanded? Image.asset('../assets/icon/up-arrows.png',color: primaryColor,):Image.asset('../assets/icon/down-arrow.png', color: primaryColor,),
+                      ),
+                    ),
+                    
+                    // IconButton(
+                      
+                    //   icon: Icon(
+                    //     _isExpanded
+                    //         ? CupertinoIcons.arrow_down
+                    //         : CupertinoIcons.arrow_up,
+                    //     color: primaryColor,
+                    //     size: 30,
+                    //   ),
+                    //   onPressed: _toggleExpanded,
+                    // ),
+                  ],
+                ),
+              ),
+
+              /////////////////////////////////////////////////////////
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
 
               const TaskListTile(),

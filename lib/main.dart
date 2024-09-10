@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_assist/home_page.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/scrollable_view.dart';
 import 'package:my_assist/view/notes.dart';
 import 'package:my_assist/view/profile.dart';
 // import 'package:my_assist/view/drawer.dart';
