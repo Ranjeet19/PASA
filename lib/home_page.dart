@@ -261,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                         height:
                             _expandedHeight, // Animated height to simulate curtain opening/closing
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                           child: GridView.builder(
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
@@ -278,7 +278,7 @@ class _HomePageState extends State<HomePage> {
                                 decoration: BoxDecoration(
                                   color: mobileBackgroundColor,
                                   borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(color:primaryColor),
+                                  border: Border.all(color:primaryColor, width: 2),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -287,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                                         .access_alarm,color: Colors.white,), // Change icon accordingly
                                     const SizedBox(height: 8),
                                     Text(
-                                        'Label ${index + 40}', style: TextStyle(color: Colors.white),), // Adjust for index
+                                        'Label ${index + 40}', style: const TextStyle(color:primaryColor),), // Adjust for index
                                   ],
                                 ),
                               );
@@ -304,7 +304,7 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         height: 30,
                         width: 30,
-                        child: _isExpanded? Image.asset('../assets/icon/up-arrows.png',color: primaryColor,):Image.asset('../assets/icon/down-arrow.png', color: primaryColor,),
+                        child: _isExpanded? Image.asset('assets/icon/up-arrows.png',color: primaryColor,):Image.asset('assets/icon/down-arrow.png', color: primaryColor,),
                       ),
                     ),
                     

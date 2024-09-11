@@ -102,7 +102,7 @@ class StaggerdView extends StatelessWidget {
                           padding: const EdgeInsets.all(
                               15),
                           child: Image.asset(
-                            '../assets/icon/sign-in.png',
+                            'assets/icon/sign-in.png',
                             color: primaryColor,
                           ),
                         ),
