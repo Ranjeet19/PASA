@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor, // Set global background color here
       ),
 
-      home:  const HomePage(),
+      home:   HomePage(),
     );
   }
 }
