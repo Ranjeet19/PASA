@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/drawer_view/faviourite.dart';
 
 class Draw extends StatelessWidget {
   const Draw({super.key});
@@ -87,7 +88,14 @@ class Draw extends StatelessWidget {
               ),
               const Divider(),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FavView(),
+                    ),
+                  );
+                },
                 leading: const Icon(
                   CupertinoIcons.heart,
                   color: primaryColor,
