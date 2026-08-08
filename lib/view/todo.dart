@@ -1,4 +1,5 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:my_assist/utils/colors.dart';
@@ -170,11 +171,17 @@ class TodoListScreenState extends State<TodoListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: InkWell(
-        //   onTap: (){
-        //     Navigator.pop(context);
-        //   },
-        //   child: const Icon(CupertinoIcons.chevron_back, color: primaryColor,)),
+
+leading:  Positioned(
+                    left: 5,
+                    top: 5,
+                    child: IconButton(
+                      icon: const Icon(CupertinoIcons.back,
+                          color: primaryColor, size: 30),
+                      onPressed: () => Navigator.pop(context),
+                    )),
+
+    
         backgroundColor: mobileBackgroundColor,
         centerTitle: true,
         title: const Text(

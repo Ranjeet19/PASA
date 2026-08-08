@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
 
@@ -38,10 +39,10 @@ class ProfileView extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                         border:
-                            Border.all(color: mobileBackgroundColor, width: 4),
+                            Border.all(color: primaryColor, width: 4),
                         borderRadius: BorderRadius.circular(100)),
-                    width: 100,
-                    height: 100,
+                    width: 80,
+                    height: 80,
                     child: const CircleAvatar(
                       radius: 2,
                       backgroundImage: AssetImage('assets/rnzt.jpg'),
@@ -49,14 +50,22 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 const Positioned(
-                    left: 120,
+                    left: 100,
                     bottom: 15,
                     child: Text(
-                      "Ranjeet Shrestha", 
+                      "Ranjeet Shrestha",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: primaryColor),
+                    )),
+                Positioned(
+                    left: 5,
+                    top: 5,
+                    child: IconButton(
+                      icon: const Icon(CupertinoIcons.back,
+                          color: primaryColor, size: 30),
+                      onPressed: () => Navigator.pop(context),
                     )),
               ],
             ),
@@ -92,8 +101,8 @@ class ProfileView extends StatelessWidget {
                 ],
               ),
             ),
-          ), 
-          Divider(),
+          ),
+          const Divider(),
         ],
       ),
     ));

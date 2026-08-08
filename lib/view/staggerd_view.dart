@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/finance/finance.dart';
 
 class StaggerdView extends StatelessWidget {
   const StaggerdView({super.key});
@@ -45,18 +46,35 @@ class StaggerdView extends StatelessWidget {
             ),
             Column(
               children: [
-                Container(
-                  height: 105,
-                  width: 180,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: primaryColor,
+                InkWell(
+                  onTap: () {
+                    // Handle tap event
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const FinanceHomeScreen()));
+                  },
+                  child: Container(
+                    height: 105,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 2,
+                        color: primaryColor,
+                      ),
+                      color: mobileBackgroundColor,
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    color: mobileBackgroundColor,
-                    borderRadius: BorderRadius.circular(15),
+                    child: const Padding(
+                      padding:  EdgeInsets.all(15.0),
+                      child: Center(
+                        child: Text(
+                          "My Wallet",
+                          style: TextStyle(
+                            color: primaryColor,
+                            fontSize: 26,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-
                 ),
                 const SizedBox(
                   height: 10,

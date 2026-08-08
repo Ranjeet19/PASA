@@ -166,11 +166,9 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(
-                    // color: Colors.red,
                     height: 80,
                     width: 80,
                     child: Stack(
-                      // alignment: Alignment.center,
                       children: [
                         // Positioned(
                         //   right: 80,
@@ -250,6 +248,7 @@ class _HomePageState extends State<HomePage> {
                     // Main GridView (4 containers initially)
                     const Padding(
                       padding: EdgeInsets.all(8.0),
+                      //$=4 mainn grid view finace galary security documents
                       child: StaggerdView(),
                     ),
 

@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_assist/home_page.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/finance/finance.dart';
 import 'package:my_assist/view/notes.dart';
 // import 'package:my_assist/view/drawer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+
+  // Register the NoteAdapter
   Hive.registerAdapter(NoteAdapter());
   await Hive.openBox<Note>('notes');
+
+// Initialize the FinanceService
+    await FinanceService.init();
+  await FinanceService.seedIfEmpty(); 
   runApp(const MyApp());
 }
 
