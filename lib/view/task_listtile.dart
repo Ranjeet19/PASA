@@ -7,9 +7,9 @@ import 'package:my_assist/view/rashifal.dart';
 import 'package:my_assist/view/todo.dart';
 
 class TaskListTile extends StatelessWidget {
-
-  const TaskListTile({super.key,});
-
+  const TaskListTile({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +17,17 @@ class TaskListTile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
+          ),
           child: Column(
             children: [
+              // --------------------------------------------------
+              // HOROSCOPE
+              // --------------------------------------------------
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -38,7 +44,9 @@ class TaskListTile extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const RashifalScreen()),
+                          builder: (context) =>
+                              const RashifalScreen(),
+                        ),
                       );
                     },
                     child: const ListTile(
@@ -48,11 +56,15 @@ class TaskListTile extends StatelessWidget {
                       ),
                       title: Text(
                         'Horoscope',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       subtitle: Text(
                         'Read Your Horoscope Here...',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       trailing: Icon(
                         Icons.navigate_next,
@@ -62,29 +74,44 @@ class TaskListTile extends StatelessWidget {
                   ),
                 ),
               ),
-             
 
+              // --------------------------------------------------
+              // TASK TITLE
+              // --------------------------------------------------
 
-                 const Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Text(
-              "Task To Complete...",
-              style: TextStyle(
-                color: primaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    "Task To Complete...",
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
-             
+
+              // --------------------------------------------------
+              // TO-DO
+              // --------------------------------------------------
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const TodoListApp()));
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const TodoListScreen(),
+                      ),
+                    );
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -102,11 +129,15 @@ class TaskListTile extends StatelessWidget {
                       ),
                       title: Text(
                         'To-Do',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       subtitle: Text(
                         'Track tasks you need to finish',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       trailing: Icon(
                         Icons.navigate_next,
@@ -116,12 +147,22 @@ class TaskListTile extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // --------------------------------------------------
+              // NEWS
+              // --------------------------------------------------
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const NewsScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const NewsScreen(),
+                      ),
+                    );
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -139,11 +180,15 @@ class TaskListTile extends StatelessWidget {
                       ),
                       title: Text(
                         'News',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       subtitle: Text(
                         'Catch up on the latest headlines',
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                       trailing: Icon(
                         Icons.navigate_next,

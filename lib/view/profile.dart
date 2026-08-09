@@ -7,6 +7,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     const iconStyle = TextStyle(
       color: primaryColor,
       fontSize: 14,

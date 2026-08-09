@@ -10,140 +10,200 @@ class RowMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0, left: 20),
+      padding: const EdgeInsets.only(
+        top: 20.0,
+        left: 20,
+      ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            // --------------------------------------------------
+            // TO DO
+            // --------------------------------------------------
+
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const TodoListApp()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TodoListScreen(),
+                    ),
+                  );
                 },
                 child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          color: primaryColor,
-                          width: 2,
-                        )),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                      child: Text(
-                        "To Do",
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      border: Border.all(
-                        color: primaryColor,
-                        width: 2,
-                      )),
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      color: primaryColor,
+                      width: 2,
+                    ),
+                  ),
                   child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 8,
+                    ),
                     child: Text(
-                      "Date Reminder",
+                      "To Do",
                       style: TextStyle(
                         color: primaryColor,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ),
+
+            // --------------------------------------------------
+            // DATE REMINDER
+            // --------------------------------------------------
+
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                    color: primaryColor,
+                    width: 2,
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 8,
+                  ),
+                  child: Text(
+                    "Date Reminder",
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // --------------------------------------------------
+            // COUNT DOWN
+            // --------------------------------------------------
+
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CountdownApp()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CountdownApp(),
+                    ),
+                  );
                 },
                 child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          color: primaryColor,
-                          width: 2,
-                        )),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                      child: Text(
-                        "Count Down ",
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      border: Border.all(
-                        color: primaryColor,
-                        width: 2,
-                      )),
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      color: primaryColor,
+                      width: 2,
+                    ),
+                  ),
                   child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 8,
+                    ),
                     child: Text(
-                      "Health",
+                      "Count Down",
                       style: TextStyle(
                         color: primaryColor,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ),
+
+            // --------------------------------------------------
+            // HEALTH
+            // --------------------------------------------------
+
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                    color: primaryColor,
+                    width: 2,
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 8,
+                  ),
+                  child: Text(
+                    "Health",
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // --------------------------------------------------
+            // NOTES
+            // --------------------------------------------------
+
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NoteListPage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NoteListPage(),
+                    ),
+                  );
                 },
                 child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          color: primaryColor,
-                          width: 2,
-                        )),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                      child: Text(
-                        "Notes",
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      color: primaryColor,
+                      width: 2,
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 8,
+                    ),
+                    child: Text(
+                      "Notes",
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
-                    )),
+                    ),
+                  ),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -45,6 +45,7 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_slidable: ^3.1.1
   uuid: ^4.5.0
+  flutter_native_splash: ^2.4.7
 
 
 dev_dependencies:
@@ -110,3 +111,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/logo/logo.png
+  android: true
+  ios: true
+  web: true

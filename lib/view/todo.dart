@@ -1,24 +1,7 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:my_assist/utils/colors.dart';
-
-class TodoListApp extends StatelessWidget {
-  const TodoListApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const TodoListScreen(),
-      theme: ThemeData(
-        scaffoldBackgroundColor: mobileBackgroundColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-    );
-  }
-}
 
 class Todo {
   String title;
@@ -42,18 +25,28 @@ class TodoListScreen extends StatefulWidget {
 class TodoListScreenState extends State<TodoListScreen> {
   final List<Todo> _tasks = [];
   final TextEditingController _taskController = TextEditingController();
+
   String _selectedPriority = 'Medium';
   DateTime _selectedDate = DateTime.now();
+
+  @override
+  void dispose() {
+    _taskController.dispose();
+    super.dispose();
+  }
 
   void _addTask() {
     if (_taskController.text.isNotEmpty) {
       setState(() {
-        _tasks.add(Todo(
-          title: _taskController.text,
-          priority: _selectedPriority,
-          dueDate: _selectedDate,
-        ));
+        _tasks.add(
+          Todo(
+            title: _taskController.text,
+            priority: _selectedPriority,
+            dueDate: _selectedDate,
+          ),
+        );
       });
+
       _taskController.clear();
       _sortTasks();
     }
@@ -64,7 +57,10 @@ class TodoListScreenState extends State<TodoListScreen> {
     _selectedPriority = _tasks[index].priority;
     _selectedDate = _tasks[index].dueDate;
 
-    _showTaskDialog(editMode: true, index: index);
+    _showTaskDialog(
+      editMode: true,
+      index: index,
+    );
   }
 
   void _removeTask(int index) {
@@ -79,6 +75,7 @@ class TodoListScreenState extends State<TodoListScreen> {
       _tasks[index].priority = _selectedPriority;
       _tasks[index].dueDate = _selectedDate;
     });
+
     _taskController.clear();
     _sortTasks();
   }
@@ -89,7 +86,9 @@ class TodoListScreenState extends State<TodoListScreen> {
         if (a.priority == b.priority) {
           return a.dueDate.compareTo(b.dueDate);
         }
-        return _priorityValue(a.priority).compareTo(_priorityValue(b.priority));
+
+        return _priorityValue(a.priority)
+            .compareTo(_priorityValue(b.priority));
       });
     });
   }
@@ -100,53 +99,73 @@ class TodoListScreenState extends State<TodoListScreen> {
     return 2;
   }
 
-  void _showTaskDialog({bool editMode = false, int? index}) {
+  void _showTaskDialog({
+    bool editMode = false,
+    int? index,
+  }) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(editMode ? 'Edit Task' : 'Add Task'),
+      builder: (dialogContext) => AlertDialog(
+        title: Text(
+          editMode ? 'Edit Task' : 'Add Task',
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: _taskController,
-              decoration: const InputDecoration(labelText: 'Task Title'),
+              decoration: const InputDecoration(
+                labelText: 'Task Title',
+              ),
             ),
+
             const SizedBox(height: 10),
+
             DropdownButton<String>(
               value: _selectedPriority,
               onChanged: (String? newValue) {
-                setState(() {
-                  _selectedPriority = newValue!;
-                });
+                if (newValue != null) {
+                  setState(() {
+                    _selectedPriority = newValue;
+                  });
+                }
               },
-              items: <String>['High', 'Medium', 'Low']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
+              items: ['High', 'Medium', 'Low']
+                  .map<DropdownMenuItem<String>>(
+                    (String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    },
+                  )
+                  .toList(),
             ),
+
             const SizedBox(height: 10),
+
             TextButton(
               onPressed: _selectDate,
               child: Text(
-                  'Date: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}'),
+                'Date: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}',
+              ),
             ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              Navigator.of(dialogContext).pop();
+
               if (editMode) {
                 _updateTask(index!);
               } else {
                 _addTask();
               }
             },
-            child: Text(editMode ? 'Update' : 'Add'),
+            child: Text(
+              editMode ? 'Update' : 'Add',
+            ),
           ),
         ],
       ),
@@ -160,6 +179,7 @@ class TodoListScreenState extends State<TodoListScreen> {
       firstDate: DateTime.now(),
       lastDate: DateTime(2101),
     );
+
     if (picked != null && picked != _selectedDate) {
       setState(() {
         _selectedDate = picked;
@@ -171,32 +191,37 @@ class TodoListScreenState extends State<TodoListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            CupertinoIcons.back,
+            color: primaryColor,
+            size: 30,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
 
-leading:  Positioned(
-                    left: 5,
-                    top: 5,
-                    child: IconButton(
-                      icon: const Icon(CupertinoIcons.back,
-                          color: primaryColor, size: 30),
-                      onPressed: () => Navigator.pop(context),
-                    )),
-
-    
         backgroundColor: mobileBackgroundColor,
         centerTitle: true,
+
         title: const Text(
           'To-Do',
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(
+            color: primaryColor,
+          ),
         ),
+
         bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(1.0), // Height of the Divider
+          preferredSize: Size.fromHeight(1.0),
           child: Divider(
-            thickness: 2.0, // Thickness of the Divider (Border)
-            color: primaryColor, // Color of the Divider (Border)
-            height: 1.0, // Space above the Divider
+            thickness: 2.0,
+            color: primaryColor,
+            height: 1.0,
           ),
         ),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -206,7 +231,9 @@ leading:  Positioned(
                 itemCount: _tasks.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                    ),
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.white,
@@ -216,25 +243,37 @@ leading:  Positioned(
                     child: ListTile(
                       title: Text(
                         _tasks[index].title,
-                        style:
-                            const TextStyle(color: primaryColor, fontSize: 18),
+                        style: const TextStyle(
+                          color: primaryColor,
+                          fontSize: 18,
+                        ),
                       ),
+
                       subtitle: Text(
-                        'Priority: ${_tasks[index].priority} - Due: ${DateFormat('yyyy-MM-dd').format(_tasks[index].dueDate)}',
+                        'Priority: ${_tasks[index].priority} - '
+                        'Due: ${DateFormat('yyyy-MM-dd').format(_tasks[index].dueDate)}',
                         style: const TextStyle(
                           color: primaryColor,
                           fontSize: 10,
                         ),
                       ),
+
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: const Icon(Icons.edit, color: Colors.blue),
+                            icon: const Icon(
+                              Icons.edit,
+                              color: Colors.blue,
+                            ),
                             onPressed: () => _editTask(index),
                           ),
+
                           IconButton(
-                            icon: const Icon(Icons.delete, color: Colors.red),
+                            icon: const Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
                             onPressed: () => _removeTask(index),
                           ),
                         ],
@@ -247,19 +286,28 @@ leading:  Positioned(
           ],
         ),
       ),
+
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 10, right: 5),
+        padding: const EdgeInsets.only(
+          bottom: 10,
+          right: 5,
+        ),
         child: FloatingActionButton(
           backgroundColor: mobileBackgroundColor,
           foregroundColor: primaryColor,
+
           onPressed: () => _showTaskDialog(),
+
           shape: const StadiumBorder(
             side: BorderSide(
-              color: Colors.white, // White border around the button
-              width: 3.0, // Border width
+              color: Colors.white,
+              width: 3.0,
             ),
           ),
-          child: const Icon(Icons.add),
+
+          child: const Icon(
+            Icons.add,
+          ),
         ),
       ),
     );
