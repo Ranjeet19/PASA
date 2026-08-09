@@ -3,8 +3,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/Notes/detail_page.dart';
 import 'package:my_assist/view/Notes/edit_page.dart';
-import 'package:uuid/uuid.dart';
-import 'package:intl/intl.dart';
+// import 'package:uuid/uuid.dart';
+// import 'package:intl/intl.dart';
 
 // Define the Note class
 class Note extends HiveObject {

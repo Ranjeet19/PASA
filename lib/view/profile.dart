@@ -44,7 +44,7 @@ class ProfileView extends StatelessWidget {
                     width: 80,
                     height: 80,
                     child: const CircleAvatar(
-                      radius: 2,
+                      radius: 36,
                       backgroundImage: AssetImage('assets/rnzt.jpg'),
                     ),
                   ),

@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/news.dart';
 import 'package:my_assist/view/rashifal.dart';
 import 'package:my_assist/view/todo.dart';
 
@@ -96,15 +97,15 @@ class TaskListTile extends StatelessWidget {
                     ),
                     child: const ListTile(
                       leading: Icon(
-                        Icons.email,
+                        Icons.checklist,
                         color: primaryColor,
                       ),
                       title: Text(
-                        'Todo App',
+                        'To-Do',
                         style: TextStyle(color: primaryColor),
                       ),
                       subtitle: Text(
-                        'john.doe@example.com',
+                        'Track tasks you need to finish',
                         style: TextStyle(color: primaryColor),
                       ),
                       trailing: Icon(
@@ -117,62 +118,37 @@ class TaskListTile extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: primaryColor,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const NewsScreen()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 2,
+                        color: primaryColor,
+                      ),
+                      color: mobileBackgroundColor,
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    color: mobileBackgroundColor,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const ListTile(
-                    leading: Icon(
-                      Icons.email,
-                      color: primaryColor,
-                    ),
-                    title: Text(
-                      'Email',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    subtitle: Text(
-                      'john.doe@example.com',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    trailing: Icon(
-                      Icons.navigate_next,
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: primaryColor,
-                    ),
-                    color: mobileBackgroundColor,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const ListTile(
-                    leading: Icon(
-                      Icons.email,
-                      color: primaryColor,
-                    ),
-                    title: Text(
-                      'Email',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    subtitle: Text(
-                      'john.doe@example.com',
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    trailing: Icon(
-                      Icons.navigate_next,
-                      color: primaryColor,
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.newspaper,
+                        color: primaryColor,
+                      ),
+                      title: Text(
+                        'News',
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      subtitle: Text(
+                        'Catch up on the latest headlines',
+                        style: TextStyle(color: primaryColor),
+                      ),
+                      trailing: Icon(
+                        Icons.navigate_next,
+                        color: primaryColor,
+                      ),
                     ),
                   ),
                 ),
