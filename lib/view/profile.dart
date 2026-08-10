@@ -54,7 +54,7 @@ class ProfileView extends StatelessWidget {
                     left: 100,
                     bottom: 15,
                     child: Text(
-                      "Ranjeet Shrestha",
+                      "Ranjeet Shrestha...",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
