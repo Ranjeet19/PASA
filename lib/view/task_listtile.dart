@@ -61,7 +61,7 @@ class TaskListTile extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        'Read Your Horoscope Here...',
+                        'Read Your Horoscope Here!!',
                         style: TextStyle(
                           color: primaryColor,
                         ),
