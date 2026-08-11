@@ -87,7 +87,7 @@ class TaskListTile extends StatelessWidget {
                     vertical: 10,
                   ),
                   child: Text(
-                    "Task To Complete...",
+                    "Task To Complete!!",
                     style: TextStyle(
                       color: primaryColor,
                       fontSize: 16,
