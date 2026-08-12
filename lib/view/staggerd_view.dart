@@ -62,16 +62,18 @@ class StaggerdView extends StatelessWidget {
                       color: mobileBackgroundColor,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Padding(
-                      padding:  EdgeInsets.all(15.0),
+                    child: Padding(
+                      padding:  const EdgeInsets.all(15.0),
                       child: Center(
-                        child: Text(
-                          "My Wallet",
-                          style: TextStyle(
+                         child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Image.asset(
+                            "icon/digital-wallet.png",
                             color: primaryColor,
-                            fontSize: 26,
+                            height: 100,
+                            width: 100,
                           ),
-                        ),
+                        )
                       ),
                     ),
                   ),

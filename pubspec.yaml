@@ -81,6 +81,9 @@ flutter:
     - assets/lottie/bot2.json
     - assets/icon/exchange.png
     - assets/icon/vault.png
+    - assets/icon/digital-wallet.png
+
+    
 
 
     # - images/a_dot_burr.jpeg
