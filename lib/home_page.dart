@@ -239,8 +239,7 @@ class _HomePageState extends State<HomePage> {
                 height: 10,
               ),
 
-              /////////////
-              ///
+           
               ///
               SingleChildScrollView(
                 child: Column(
@@ -308,17 +307,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     
-                    // IconButton(
-                      
-                    //   icon: Icon(
-                    //     _isExpanded
-                    //         ? CupertinoIcons.arrow_down
-                    //         : CupertinoIcons.arrow_up,
-                    //     color: primaryColor,
-                    //     size: 30,
-                    //   ),
-                    //   onPressed: _toggleExpanded,
-                    // ),
+                  
                   ],
                 ),
               ),
