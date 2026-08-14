@@ -176,17 +176,17 @@ class _FinanceHomeScreenState extends State<FinanceHomeScreen> {
                 ),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 22, 20, 8),
+                  const Padding(
+                      padding:  EdgeInsets.fromLTRB(20, 22, 20, 8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text('Recent Transactions',
+                          Text('Recent Transactions',
                               style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black)),
-                          const Text('See all',
+                          Text('See all',
                               style: TextStyle(
                                   color: Colors.black54,
                                   fontWeight: FontWeight.w600,

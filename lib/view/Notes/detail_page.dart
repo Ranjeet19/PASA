@@ -19,7 +19,7 @@ class NoteDetailPage extends StatelessWidget {
           onTap: (){
             Navigator.pop(context);
           },
-          child: Icon(CupertinoIcons.back)),
+          child: const Icon(CupertinoIcons.back)),
         foregroundColor: primaryColor,
         backgroundColor: mobileBackgroundColor,
         // title: Column(

@@ -5,13 +5,11 @@ class FavView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Center(
-          child: Text(
-            'Favourite View',
-            style: TextStyle(fontSize: 24),
-          ),
+    return const Scaffold(
+      body:  Center(
+        child: Text(
+          'Favourite View',
+          style: TextStyle(fontSize: 24),
         ),
       ),
     );
