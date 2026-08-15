@@ -252,49 +252,60 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     // Curtain Animation Container
-                    ClipRect(
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut,
-                        height:
-                            _expandedHeight, // Animated height to simulate curtain opening/closing
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                          child: GridView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: 12, // Number of additional containers
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4,
-                              crossAxisSpacing: 10.0,
-                              mainAxisSpacing: 10.0,
-                              childAspectRatio: 1.0,
-                            ),
-                            itemBuilder: (context, index) {
-                              return Container(
-                                decoration: BoxDecoration(
-                                  color: mobileBackgroundColor,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(color:primaryColor, width: 2),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(Icons
-                                        .access_alarm,color: Colors.white,), // Change icon accordingly
-                                    const SizedBox(height: 8),
-                                    Text(
-                                        'Label ${index + 40}', style: const TextStyle(color:primaryColor),), // Adjust for index
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    ),
-
+                   // Curtain Animation Container
+ClipRect(
+  child: AnimatedContainer(
+    duration: const Duration(milliseconds: 500),
+    curve: Curves.easeInOut,
+    height: _expandedHeight,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 15,
+      ),
+      child: GridView.builder(
+        // Allow the grid to scroll
+        physics: const BouncingScrollPhysics(),
+        itemCount: 12,
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+          childAspectRatio: 1.0,
+        ),
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+              color: mobileBackgroundColor,
+              borderRadius: BorderRadius.circular(8.0),
+              border: Border.all(
+                color: primaryColor,
+                width: 2,
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.access_alarm,
+                  color: Colors.white,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Label ${index + 40}',
+                  style: const TextStyle(
+                    color: primaryColor,
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    ),
+  ),
+),
                     // Down/Up Arrow to Toggle,
 
                     InkWell(
