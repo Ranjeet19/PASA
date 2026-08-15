@@ -251,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                       child: StaggerdView(),
                     ),
 
-                    // Curtain Animation Container
+
                    // Curtain Animation Container
 ClipRect(
   child: AnimatedContainer(
