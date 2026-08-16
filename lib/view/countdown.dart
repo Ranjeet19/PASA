@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:my_assist/utils/colors.dart';
@@ -70,6 +71,14 @@ class TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
+        leading: IconButton(
+          icon: const Icon(CupertinoIcons.back),
+          color: primaryColor,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         centerTitle: true,
         title: const Text('Event Countdown'),
         bottom: const PreferredSize(
@@ -294,7 +303,15 @@ class AddTaskScreenState extends State<AddTaskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text(widget.task == null ? 'Add Task' : 'Edit Task')),
+          AppBar(
+            leading: IconButton(
+              icon: const Icon(CupertinoIcons.back),
+              color: primaryColor,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            title: Text(widget.task == null ? 'Add Task' : 'Edit Task')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
