@@ -81,7 +81,7 @@ class RowMenu extends StatelessWidget {
                     horizontal: 8,
                   ),
                   child: Text(
-                    "Date Reminder",
+                    "Reminder",
                     style: TextStyle(
                       color: primaryColor,
                       fontSize: 14,
