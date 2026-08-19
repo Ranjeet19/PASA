@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  app_blocker:
+    dependency: "direct main"
+    description:
+      name: app_blocker
+      sha256: c4baf520156179bc6c63c21880cecd725557f9614e0e8b6c2ba9d9ecbf705dd5
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   archive:
     dependency: transitive
     description:

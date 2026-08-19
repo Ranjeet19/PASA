@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/LockUp/self_lock.dart';
 import 'package:my_assist/view/finance/finance.dart';
 
 class StaggerdView extends StatelessWidget {
@@ -29,7 +30,6 @@ class StaggerdView extends StatelessWidget {
               ),
               // child: Image.asset('assets/rnzt.jpg', fit: BoxFit.cover,),
 
-              
               // const Column(
               //   children: [
               //     Text(
@@ -49,7 +49,10 @@ class StaggerdView extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     // Handle tap event
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => const FinanceHomeScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const FinanceHomeScreen()));
                   },
                   child: Container(
                     height: 105,
@@ -63,18 +66,17 @@ class StaggerdView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                      padding:  const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(15.0),
                       child: Center(
-                         child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Image.asset(
-                            "icon/digital-wallet.png",
-                            color: primaryColor,
-                            height: 100,
-                            width: 100,
-                          ),
-                        )
-                      ),
+                          child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Image.asset(
+                          "icon/digital-wallet.png",
+                          color: primaryColor,
+                          height: 100,
+                          width: 100,
+                        ),
+                      )),
                     ),
                   ),
                 ),
@@ -107,6 +109,14 @@ class StaggerdView extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const SelfLockPage(),
+                          ),
+                        );
+                      },
                       child: Container(
                         height: 105,
                         width: 85,
@@ -119,8 +129,7 @@ class StaggerdView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(
-                              15),
+                          padding: const EdgeInsets.all(15),
                           child: Image.asset(
                             'assets/icon/sign-in.png',
                             color: primaryColor,

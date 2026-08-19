@@ -46,6 +46,7 @@ dependencies:
   flutter_slidable: ^3.1.1
   uuid: ^4.5.0
   flutter_native_splash: ^2.4.7
+  app_blocker: ^2.1.0
 
 
 dev_dependencies:
