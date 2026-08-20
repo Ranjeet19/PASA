@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/LockUp/self_lock.dart';
+import 'package:my_assist/view/file_saver/file_saver.dart';
 import 'package:my_assist/view/finance/finance.dart';
 
 class StaggerdView extends StatelessWidget {
@@ -91,7 +92,7 @@ class StaggerdView extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const SelfLockPage(),
+                            builder: (_) => const FileSaverPage(),
                           ),
                         );
                       },
