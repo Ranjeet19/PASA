@@ -251,14 +251,14 @@ class _SelfLockPageState extends State<SelfLockPage>
                   FontWeight.bold,
             ),
           ),
-          content: Text(
+          content:  const Text(
             'Android may require more than one '
             'permission for Self Lock.\n\n'
             'If Settings opened, enable PASA '
             'under Accessibility and return to '
             'this screen.\n\n'
             'Then press "Grant Permission" again.',
-            style: const TextStyle(
+            style: TextStyle(
               color: textSecondary,
               height: 1.5,
             ),
