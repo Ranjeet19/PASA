@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/LockUp/self_lock.dart';
-import 'package:my_assist/view/file_saver/file_saver.dart';
 import 'package:my_assist/view/finance/finance.dart';
 
 class StaggerdView extends StatelessWidget {
@@ -86,26 +85,37 @@ class StaggerdView extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(
-                        height: 105,
-                        width: 85,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 2,
-                            color: primaryColor,
+                    InkWell(
+                     
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const SelfLockPage(),
                           ),
-                          color: mobileBackgroundColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Image.asset(
-                            "assets/icon/exchange.png",
-                            color: primaryColor,
-                            height: 1,
-                            width: 1,
+                        );
+                      },
+                      child: Container(
+                          height: 105,
+                          width: 85,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            color: mobileBackgroundColor,
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                        )),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Image.asset(
+                              "assets/icon/exchange.png",
+                              color: primaryColor,
+                              height: 1,
+                              width: 1,
+                            ),
+                          )),
+                    ),
                     const SizedBox(
                       width: 10,
                     ),
@@ -114,7 +124,7 @@ class StaggerdView extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const FileSaverPage(),
+                            builder: (_) => const SelfLockPage(),
                           ),
                         );
                       },
