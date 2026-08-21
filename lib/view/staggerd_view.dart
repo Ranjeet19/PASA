@@ -43,7 +43,7 @@ class StaggerdView extends StatelessWidget {
               // ),
             ),
             const SizedBox(
-              width: 15,
+              width: 10,
             ),
             Column(
               children: [
