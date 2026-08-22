@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _isExpanded = !_isExpanded;
       _expandedHeight =
-          _isExpanded ? 300.0 : 0.0; // Height to expand or collapse to
+          _isExpanded ? 100.0 : 0.0; // Height to expand or collapse to
     });
   }
 
@@ -250,6 +250,7 @@ class _HomePageState extends State<HomePage> {
                     // Main GridView (4 containers initially)
                     const Padding(
                       padding: EdgeInsets.all(8.0),
+
                       //$=4 mainn grid view finace galary security documents
                       child: StaggerdView(),
                     ),
@@ -269,7 +270,7 @@ ClipRect(
       child: GridView.builder(
         // Allow the grid to scroll
         physics: const BouncingScrollPhysics(),
-        itemCount:7,
+        itemCount:4,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
