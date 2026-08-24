@@ -67,7 +67,7 @@ class StaggerdView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Center(
                           child: Padding(
                         padding: const EdgeInsets.all(15.0),
