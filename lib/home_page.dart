@@ -270,7 +270,7 @@ ClipRect(
       child: GridView.builder(
         // Allow the grid to scroll
         physics: const BouncingScrollPhysics(),
-        itemCount:4,
+        itemCount:8,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
