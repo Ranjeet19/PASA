@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _isExpanded = !_isExpanded;
       _expandedHeight =
-          _isExpanded ? 100.0 : 0.0; // Height to expand or collapse to
+          _isExpanded ? 200.0 : 0.0; // Height to expand or collapse to
     });
   }
 
