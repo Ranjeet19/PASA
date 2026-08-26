@@ -297,7 +297,7 @@ ClipRect(
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Label ${index + 40}',
+                  'Label ${index + 1}',
                   style: const TextStyle(
                     color: primaryColor,
                   ),
