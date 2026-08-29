@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/view/Gallery/photo_gallery.dart';
 import 'package:my_assist/view/LockUp/self_lock.dart';
 import 'package:my_assist/view/file_saver/file_saver.dart';
 import 'package:my_assist/view/finance/finance.dart';
@@ -29,18 +30,11 @@ class StaggerdView extends StatelessWidget {
                 color: mobileBackgroundColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              // child: Image.asset('assets/rnzt.jpg', fit: BoxFit.cover,),
+               child: FavoriteSliderView()
+               
+               //Image.asset('assets/rnzt.jpg', fit: BoxFit.cover,),
 
-              // const Column(
-              //   children: [
-              //     Text(
-              //       "HEllo all",
-              //       style: TextStyle(
-              //         color: primaryColor,
-              //       ),
-              //     )
-              //   ],
-              // ),
+             
             ),
             const SizedBox(
               width: 10,
