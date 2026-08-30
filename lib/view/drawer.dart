@@ -37,21 +37,21 @@ class Draw extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 35,
-                      backgroundImage: AssetImage("assets/logo/logo.png"),
+                      backgroundImage: AssetImage("assets/logo/pasa1.png"),
                     ),
                     SizedBox(
                       height: 5,
                     ),
                     Text(
-                      "Assist ME",
+                      "P A S A",
                       style: TextStyle(
                           fontFamily: 'cursive',
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 32,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '- Aiming to Helping Every body',
+                      '-PASA: a Personal Assistant & Systematic App ',
                       style: TextStyle(
                           fontFamily: 'cursive',
                           color: Colors.white,
