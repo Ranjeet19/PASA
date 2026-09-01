@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
+// import 'package:my_assist/vault_test.dart';
 import 'package:my_assist/view/Gallery/photo_gallery.dart';
 import 'package:my_assist/view/LockUp/self_lock.dart';
 import 'package:my_assist/view/file_saver/file_saver.dart';
 import 'package:my_assist/view/finance/finance.dart';
+import 'package:my_assist/view/vault/pages/vault_gate.dart';
 
 class StaggerdView extends StatelessWidget {
   const StaggerdView({super.key});
@@ -30,7 +32,7 @@ class StaggerdView extends StatelessWidget {
                 color: mobileBackgroundColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-               child: FavoriteSliderView()
+               child: const FavoriteSliderView()
                
                //Image.asset('assets/rnzt.jpg', fit: BoxFit.cover,),
 
@@ -47,7 +49,8 @@ class StaggerdView extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const FinanceHomeScreen()));
+                            builder: (_) => const FinanceHomeScreen()
+                            ));
                   },
                   child: Container(
                     height: 105,

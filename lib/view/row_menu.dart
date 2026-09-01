@@ -3,6 +3,7 @@ import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/countdown.dart';
 import 'package:my_assist/view/notes.dart';
 import 'package:my_assist/view/todo.dart';
+import 'package:my_assist/view/vault/pages/vault_gate.dart';
 
 class RowMenu extends StatelessWidget {
   const RowMenu({super.key});
@@ -67,25 +68,35 @@ class RowMenu extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(
-                    color: primaryColor,
-                    width: 2,
-                  ),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 5,
-                    horizontal: 8,
-                  ),
-                  child: Text(
-                    "Reminder",
-                    style: TextStyle(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const VaultGate(),
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
                       color: primaryColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                      width: 2,
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 8,
+                    ),
+                    child: Text(
+                      "Vault",
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
