@@ -215,6 +215,48 @@ class RowMenu extends StatelessWidget {
                 ),
               ),
             ),
+
+
+                   // --------------------------------------------------
+            // COUNT DOWN
+            // --------------------------------------------------
+
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CountdownApp(),
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      color: primaryColor,
+                      width: 2,
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 8,
+                    ),
+                    child: Text(
+                      "Count Down",
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
