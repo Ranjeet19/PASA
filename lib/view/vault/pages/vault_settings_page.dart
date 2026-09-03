@@ -66,7 +66,7 @@ class VaultSettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final background =
+    const background =
         kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
     return Scaffold(

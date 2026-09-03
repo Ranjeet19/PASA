@@ -133,7 +133,7 @@ class _VaultPinPageState extends State<VaultPinPage> {
 
   @override
   Widget build(BuildContext context) {
-    final background = kIsWeb ? webBackgroundColor : mobileBackgroundColor;
+    const background = kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
     return Scaffold(
       backgroundColor: background,
@@ -205,7 +205,7 @@ class _VaultPinPageState extends State<VaultPinPage> {
                               ? primaryColor
                               : mobileSearchColor,
                           border: Border.all(
-                            color: secondaryColor.withOpacity(.5),
+                            color: secondaryColor.withValues(alpha: .5),
                           ),
                         ),
                       ),

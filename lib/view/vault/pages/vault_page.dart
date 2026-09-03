@@ -198,7 +198,7 @@ class _VaultPageState extends State<VaultPage>
 
   @override
   Widget build(BuildContext context) {
-    final background =
+    const background =
         kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
     return WillPopScope(
@@ -321,7 +321,7 @@ class _VaultPageState extends State<VaultPage>
                             color: mobileSearchColor,
                             borderRadius: BorderRadius.circular(22),
                             border: Border.all(
-                              color: secondaryColor.withOpacity(.15),
+                              color: secondaryColor.withValues(alpha: .15),
                             ),
                           ),
                           child: Row(

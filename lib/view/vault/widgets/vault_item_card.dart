@@ -31,7 +31,7 @@ class VaultItemCard extends StatelessWidget {
         color: mobileSearchColor,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: secondaryColor.withOpacity(.16),
+          color: secondaryColor.withValues(alpha: .16),
         ),
       ),
       child: ListTile(
