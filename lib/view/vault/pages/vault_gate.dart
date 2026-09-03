@@ -67,7 +67,7 @@ class _VaultGateState extends State<VaultGate> {
 
   @override
   Widget build(BuildContext context) {
-    final background =
+    const background =
         kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
     return Scaffold(

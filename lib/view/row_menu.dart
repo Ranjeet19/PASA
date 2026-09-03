@@ -186,7 +186,7 @@ class RowMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NoteListPage(),
+                      builder: (context) => const NoteListPage(),
                     ),
                   );
                 },

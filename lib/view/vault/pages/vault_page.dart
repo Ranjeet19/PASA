@@ -201,10 +201,9 @@ class _VaultPageState extends State<VaultPage>
     const background =
         kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      onPopInvokedWithResult: (didPop, result) {
         _locked = true;
-        return true;
       },
       child: Scaffold(
         backgroundColor: background,
@@ -525,7 +524,7 @@ class _AccountDetailsSheetState
                   width: 45,
                   height: 5,
                   decoration: BoxDecoration(
-                    color: secondaryColor.withOpacity(.4),
+                    color: secondaryColor.withValues(alpha: .4),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),

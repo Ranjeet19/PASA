@@ -49,7 +49,9 @@ class NoteDetailPage extends StatelessWidget {
               } else if (value == 'Delete') {
                 final box = Hive.box<Note>('notes');
                 await box.delete(note.key);
-                Navigator.pop(context);
+                if (context.mounted) {
+                  Navigator.pop(context);
+                }
               }
             },
             itemBuilder: (context) => [

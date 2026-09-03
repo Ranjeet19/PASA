@@ -24,29 +24,6 @@ class _FileSaverPageState extends State<FileSaverPage> {
 
   final ImagePicker _imagePicker = ImagePicker();
 
-  final List<Map<String, dynamic>> _defaultCategories = [
-    {
-      'name': 'PDFs',
-      'icon': Icons.picture_as_pdf_rounded,
-    },
-    {
-      'name': 'CVs',
-      'icon': Icons.badge_rounded,
-    },
-    {
-      'name': 'Driving Licences',
-      'icon': Icons.directions_car_rounded,
-    },
-    {
-      'name': 'Photos',
-      'icon': Icons.photo_camera_rounded,
-    },
-    {
-      'name': 'Citizenship Docs',
-      'icon': Icons.credit_card_rounded,
-    },
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -537,9 +514,11 @@ class _FileSaverPageState extends State<FileSaverPage> {
                   categories,
                 );
 
-                if (mounted) {
-                  setState(() {});
+                if (!context.mounted) {
+                  return;
                 }
+
+                setState(() {});
 
                 Navigator.pop(
                   context,

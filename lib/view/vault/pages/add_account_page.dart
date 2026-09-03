@@ -161,7 +161,7 @@ class _AddAccountPageState extends State<AddAccountPage> {
 
   @override
   Widget build(BuildContext context) {
-    final background =
+    const background =
         kIsWeb ? webBackgroundColor : mobileBackgroundColor;
 
     return Scaffold(

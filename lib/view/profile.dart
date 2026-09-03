@@ -21,7 +21,7 @@ class ProfileView extends StatelessWidget {
             width: double.infinity,
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 145,
                   child: Container(
@@ -73,7 +73,7 @@ class ProfileView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
-            child: Container(
+            child: SizedBox(
               height: 20,
               width: double.infinity,
               child: Row(

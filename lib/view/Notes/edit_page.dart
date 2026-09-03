@@ -12,7 +12,7 @@ class EditNotePage extends StatefulWidget {
   const EditNotePage({super.key, this.note});
 
   @override
-  _EditNotePageState createState() => _EditNotePageState();
+  State<EditNotePage> createState() => _EditNotePageState();
 }
 
 class _EditNotePageState extends State<EditNotePage> {
@@ -121,9 +121,10 @@ class _EditNotePageState extends State<EditNotePage> {
       // Editing an existing note
       widget.note!.title = _titleController.text;
       widget.note!.content = _contentController.text;
-      widget.note!.save(); // Save changes to Hive
+      await widget.note!.save(); // Save changes to Hive
     }
 
+    if (!mounted) return;
     Navigator.pop(context);
   }
 }
