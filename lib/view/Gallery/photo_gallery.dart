@@ -192,7 +192,7 @@ class _FavoriteSliderViewState extends State<FavoriteSliderView> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'Tap to add+ your Clips',
+                          'Tap to +add your Clips',
                           style:
                               TextStyle(color: Colors.white70, fontSize: 13),
                         ),
