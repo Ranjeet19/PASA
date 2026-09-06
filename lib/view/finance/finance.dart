@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
+import 'package:my_assist/utils/colors.dart';
 
 // ================== MODEL ==================
 class TransactionModel extends HiveObject {
@@ -171,7 +172,7 @@ class _FinanceHomeScreenState extends State<FinanceHomeScreen> {
               child: Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: primaryColor,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
                 ),
                 child: Column(
@@ -188,7 +189,7 @@ class _FinanceHomeScreenState extends State<FinanceHomeScreen> {
                                   color: Colors.black)),
                           Text('See all',
                               style: TextStyle(
-                                  color: Colors.black54,
+                                  color: mobileBackgroundColor,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline)),
                         ],
