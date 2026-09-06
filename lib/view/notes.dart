@@ -115,7 +115,7 @@ class NoteListPage extends StatelessWidget {
             if (box.values.isEmpty) {
               return const Center(
                   child: Text(
-                'No notes found.',
+                'Notes not found.',
                 style: TextStyle(color: primaryColor),
               ));
             }
