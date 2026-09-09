@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _isExpanded = !_isExpanded;
       _expandedHeight =
-          _isExpanded ? 200.0 : 0.0; // Height to expand or collapse to
+          _isExpanded ? 120.0 : 0.0; // Height to expand or collapse to
     });
   }
 
@@ -261,7 +261,7 @@ ClipRect(
   child: AnimatedContainer(
     duration: const Duration(milliseconds: 500),
     curve: Curves.easeInOut,
-    height: _expandedHeight,
+    height: _expandedHeight, // Height of Expanded Container
     child: Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
