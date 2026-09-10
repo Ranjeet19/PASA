@@ -9,14 +9,12 @@ class CountdownApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Countdown App',
-      theme: ThemeData(
+    return Theme(
+      data: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.grey,
       ),
-      home: const TaskListScreen(),
+      child: const TaskListScreen(),
     );
   }
 }
