@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(
                           Icons.search,
-                          color: Colors.red,
+                          color: primaryColor,
                           size: 30,
                         ),
                         SizedBox(
