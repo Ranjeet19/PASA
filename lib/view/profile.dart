@@ -1,3 +1,4 @@
+import 'package:my_assist/services/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_assist/utils/colors.dart';
@@ -50,12 +51,15 @@ class ProfileView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Positioned(
+                Positioned(
                     left: 100,
+                    right: 10,
                     bottom: 15,
                     child: Text(
-                      "Ranjeet Shrestha...",
-                      style: TextStyle(
+                      UserProfile.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: primaryColor),

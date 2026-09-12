@@ -1,3 +1,4 @@
+import 'package:my_assist/services/user_profile.dart';
 import 'dart:async';
 
 // import 'package:flutter/cupertino.dart';
@@ -115,7 +116,8 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
+                  Expanded(
+                    child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
@@ -140,7 +142,8 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         width: 10,
                       ),
-                      Column(
+                      Expanded(
+                        child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -152,9 +155,11 @@ class _HomePageState extends State<HomePage> {
                               color: primaryColor,
                             ),
                           ),
-                          const Text(
-                            "Ranjeet Shrestha",
-                            style: TextStyle(
+                          Text(
+                            UserProfile.name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
                               color: primaryColor,
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold, // Bold weight
@@ -163,7 +168,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
+                      ),
                     ],
+                  ),
                   ),
                   SizedBox(
                     height: 80,
