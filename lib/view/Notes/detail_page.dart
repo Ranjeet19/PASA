@@ -22,19 +22,7 @@ class NoteDetailPage extends StatelessWidget {
           child: const Icon(CupertinoIcons.back)),
         foregroundColor: primaryColor,
         backgroundColor: mobileBackgroundColor,
-        // title: Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Text(
-        //       note.date,
-        //       style: const TextStyle(fontSize: 14, color: Colors.white70),
-        //     ),
-        //     Text(
-        //       note.title,
-        //       style: const TextStyle(fontSize: 18, color: Colors.white),
-        //     ),
-        //   ],
-        // ),
+        
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) async {
