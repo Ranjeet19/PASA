@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           const Text(
-                            "Ranjeet Shrestha",
+                            "Rnzt Shrestha",
                             style: TextStyle(
                               color: primaryColor,
                               fontFamily: 'Roboto',
