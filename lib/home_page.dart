@@ -9,6 +9,7 @@ import 'package:my_assist/view/row_menu.dart';
 import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';
 import 'package:my_assist/utils/colors.dart';
+import 'package:my_assist/services/user_profile.dart';
 
 class HomePage extends StatefulWidget {
   // HoroscopeCard horo;
@@ -152,12 +153,14 @@ class _HomePageState extends State<HomePage> {
                               color: primaryColor,
                             ),
                           ),
-                          const Text(
-                            "Rnzt Shrestha",
-                            style: TextStyle(
+                          Text(
+                            UserProfile.name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
                               color: primaryColor,
                               fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold, // Bold weight
+                              fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
                           ),
@@ -235,14 +238,12 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
-
               // Row Menue Started
               const RowMenu(), // Row menue has been imported as component
               const SizedBox(
                 height: 10,
               ),
 
-           
               ///
               SingleChildScrollView(
                 child: Column(
@@ -255,74 +256,79 @@ class _HomePageState extends State<HomePage> {
                       child: StaggerdView(),
                     ),
 
-
-                   // Curtain Animation Container
-ClipRect(
-  child: AnimatedContainer(
-    duration: const Duration(milliseconds: 500),
-    curve: Curves.easeInOut,
-    height: _expandedHeight, // Height of Expanded Container
-    child: Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 15,
-      ),
-      child: GridView.builder(
-        // Allow the grid to scroll
-        physics: const BouncingScrollPhysics(),
-        itemCount:1,
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
-          childAspectRatio: 1.0,
-        ),
-        itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(
-              color: mobileBackgroundColor,
-              borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(
-                color: primaryColor,
-                width: 2,
-              ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.access_alarm,
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Label ${index + 1}',
-                  style: const TextStyle(
-                    color: primaryColor,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    ),
-  ),
-),
+                    // Curtain Animation Container
+                    ClipRect(
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut,
+                        height: _expandedHeight, // Height of Expanded Container
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
+                          ),
+                          child: GridView.builder(
+                            // Allow the grid to scroll
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: 1,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4,
+                              crossAxisSpacing: 10.0,
+                              mainAxisSpacing: 10.0,
+                              childAspectRatio: 1.0,
+                            ),
+                            itemBuilder: (context, index) {
+                              return Container(
+                                decoration: BoxDecoration(
+                                  color: mobileBackgroundColor,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  border: Border.all(
+                                    color: primaryColor,
+                                    width: 2,
+                                  ),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.access_alarm,
+                                      color: Colors.white,
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      'Label ${index + 1}',
+                                      style: const TextStyle(
+                                        color: primaryColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
                     // Down/Up Arrow to Toggle,
 
                     InkWell(
-                      onTap:_toggleExpanded ,
+                      onTap: _toggleExpanded,
                       // ignore: sized_box_for_whitespace
                       child: Container(
                         height: 30,
                         width: 30,
-                        child: _isExpanded? Image.asset('assets/icon/up-arrows.png',color: primaryColor,):Image.asset('assets/icon/down-arrow.png', color: primaryColor,),
+                        child: _isExpanded
+                            ? Image.asset(
+                                'assets/icon/up-arrows.png',
+                                color: primaryColor,
+                              )
+                            : Image.asset(
+                                'assets/icon/down-arrow.png',
+                                color: primaryColor,
+                              ),
                       ),
                     ),
-                    
-                  
                   ],
                 ),
               ),

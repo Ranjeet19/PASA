@@ -4,12 +4,16 @@ import 'package:my_assist/home_page.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/view/finance/finance.dart';
 import 'package:my_assist/view/notes.dart';
+import 'package:my_assist/services/user_profile.dart';
+import 'package:my_assist/view/name_setup.dart';
 // import 'package:my_assist/view/drawer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
+
+  await UserProfile.init();
   // Register the NoteAdapter
   Hive.registerAdapter(NoteAdapter());
   await Hive.openBox<Note>('notes');
@@ -34,7 +38,9 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor, // Set global background color here
       ),
 
-      home:const HomePage(),
+      home: UserProfile.name.isEmpty
+    ? const NameSetupScreen()
+    : const HomePage(),
     );
   }
 }
