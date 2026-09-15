@@ -42,9 +42,9 @@ class _HomePageState extends State<HomePage> {
       } else if (hour >= 12 && hour < 17) {
         greeting = " Good Afternoon !!";
       } else if (hour >= 17 && hour < 21) {
-        greeting = "Good Evening !!";
+        greeting = "Good Evening!!";
       } else {
-        greeting = "Good Night !!";
+        greeting = "Good Night!!";
       }
     });
   }
