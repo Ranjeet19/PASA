@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_assist/view/drawer.dart';
 import 'package:my_assist/view/profile.dart';
+import 'package:my_assist/view/profile_avatar.dart';
 import 'package:my_assist/view/row_menu.dart';
 import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';
@@ -132,9 +133,7 @@ class _HomePageState extends State<HomePage> {
                                 border:
                                     Border.all(color: primaryColor, width: 3),
                                 borderRadius: BorderRadius.circular(100)),
-                            child: const CircleAvatar(
-                                radius: 25,
-                                backgroundImage: AssetImage("assets/rnzt.jpg")),
+                            child: const ProfileAvatar(radius: 25),
                           ),
                         ),
                       ),

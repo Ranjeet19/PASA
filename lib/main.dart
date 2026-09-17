@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor, // Set global background color here
       ),
 
-      home: UserProfile.name.isEmpty
-    ? const NameSetupScreen()
-    : const HomePage(),
+      home: UserProfile.isComplete
+    ? const HomePage()
+    : const NameSetupScreen(),
     );
   }
 }
