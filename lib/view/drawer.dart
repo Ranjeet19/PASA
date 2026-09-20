@@ -11,7 +11,7 @@ class Draw extends StatelessWidget {
     const style = TextStyle(
         color: primaryColor,
         fontFamily: 'sans serif',
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: FontWeight.w600);
     return Scaffold(
       body: ListView(
