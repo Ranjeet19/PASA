@@ -82,7 +82,7 @@ class TaskListScreenState extends State<TaskListScreen> {
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1.0), // Height of the Divider
           child: Divider(
-            thickness: 3.0, // Thickness of the Divider (Border)
+            thickness: 2.0, // Thickness of the Divider (Border)
             color: primaryColor, // Color of the Divider (Border)
             height: 1.0, // Space above the Divider
           ),
