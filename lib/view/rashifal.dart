@@ -125,7 +125,7 @@ class RashifalScreenState extends State<RashifalScreen> {
                                 child: Text(
                                   sign[0].toUpperCase() + sign.substring(1),
                                   style: const TextStyle(
-                                      fontSize: 18, color: primaryColor),
+                                      fontSize: 16, color: primaryColor),
                                 ),
                               );
                             }).toList(),
