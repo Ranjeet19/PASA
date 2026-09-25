@@ -170,7 +170,7 @@ class NoteListPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 10, right: 5),
+        padding: const EdgeInsets.only(bottom: 12, right: 5),
         child: FloatingActionButton(
           
           backgroundColor: mobileBackgroundColor,
