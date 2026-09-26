@@ -23,7 +23,7 @@ class ProfileView extends StatelessWidget {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: 145,
+                  height: 150,
                   child: Container(
                     decoration: const BoxDecoration(
                       image: DecorationImage(
