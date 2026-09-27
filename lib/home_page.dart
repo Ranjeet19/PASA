@@ -266,46 +266,116 @@ class _HomePageState extends State<HomePage> {
                             vertical: 10,
                             horizontal: 15,
                           ),
-                          child: GridView.builder(
-                            // Allow the grid to scroll
-                            physics: const BouncingScrollPhysics(),
-                            itemCount: 1,
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4,
-                              crossAxisSpacing: 10.0,
-                              mainAxisSpacing: 10.0,
-                              childAspectRatio: 1.0,
-                            ),
-                            itemBuilder: (context, index) {
-                              return Container(
-                                decoration: BoxDecoration(
-                                  color: mobileBackgroundColor,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
-                                    color: primaryColor,
-                                    width: 2,
-                                  ),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.access_alarm,
-                                      color: Colors.white,
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      'Label ${index + 1}',
-                                      style: const TextStyle(
-                                        color: primaryColor,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
+                          child: 
+                          
+                          // GridView.builder(
+                          //   // Allow the grid to scroll
+                          //   physics: const BouncingScrollPhysics(),
+                          //   itemCount: 1,
+                          //   gridDelegate:
+                          //       const SliverGridDelegateWithFixedCrossAxisCount(
+                          //     crossAxisCount: 4,
+                          //     crossAxisSpacing: 10.0,
+                          //     mainAxisSpacing: 10.0,
+                          //     childAspectRatio: 1.0,
+                          //   ),
+                          //   itemBuilder: (context, index) {
+                          //     return Container(
+                          //       decoration: BoxDecoration(
+                          //         color: mobileBackgroundColor,
+                          //         borderRadius: BorderRadius.circular(8.0),
+                          //         border: Border.all(
+                          //           color: primaryColor,
+                          //           width: 2,
+                          //         ),
+                          //       ),
+                          //       child: Column(
+                          //         mainAxisAlignment: MainAxisAlignment.center,
+                          //         children: [
+                          //           const Icon(
+                          //             Icons.access_alarm,
+                          //             color: Colors.white,
+                          //           ),
+                          //           const SizedBox(height: 8),
+                          //           Text(
+                          //             'Label ${index + 1}',
+                          //             style: const TextStyle(
+                          //               color: primaryColor,
+                          //             ),
+                          //           ),
+                          //         ],
+                          //       ),
+                          //     );
+                          //   },
+                          // ),
+
+                          Row(
+                  children: [
+                    InkWell(
+                     
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            // builder: (_) => const FileSaverPage(),
                           ),
+                        );
+                      },
+                      child: Container(
+                          height: 105,
+                          width: 85,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            color: mobileBackgroundColor,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Image.asset(
+                              "assets/icon/exchange.png",
+                              color: primaryColor,
+                              height: 1,
+                              width: 1,
+                            ),
+                          )),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            // builder: (_) => const SelfLockPage(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 105,
+                        width: 85,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: primaryColor,
+                          ),
+                          color: mobileBackgroundColor,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Image.asset(
+                            'assets/icon/sign-in.png',
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                         ),
                       ),
                     ),
