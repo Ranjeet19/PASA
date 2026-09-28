@@ -68,7 +68,7 @@ class StaggerdView extends StatelessWidget {
                           child: Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Image.asset(
-                          "assets/icon/app-lock.png",
+                          "assets/icon/security.png",
                           color: primaryColor,
                           height: 100,
                           width: 100,

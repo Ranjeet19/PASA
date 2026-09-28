@@ -407,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Image.asset(
-                              "assets/icon/app-lock.png",
+                              "assets/icon/security.png",
                               color: primaryColor,
                               height: 1,
                               width: 1,
