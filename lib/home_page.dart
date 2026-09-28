@@ -4,6 +4,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_assist/view/drawer.dart';
+import 'package:my_assist/view/finance/finance.dart';
+import 'package:my_assist/view/news.dart';
 import 'package:my_assist/view/profile.dart';
 import 'package:my_assist/view/profile_avatar.dart';
 import 'package:my_assist/view/row_menu.dart';
@@ -317,13 +319,13 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            // builder: (_) => const FileSaverPage(),
+                            builder: (_) => const NewsScreen(),
                           ),
                         );
                       },
                       child: Container(
-                          height: 105,
-                          width: 85,
+                          height: 85,
+                          width: 75,
                           decoration: BoxDecoration(
                             border: Border.all(
                               width: 2,
@@ -333,9 +335,9 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Image.asset(
-                              "assets/icon/exchange.png",
+                              "assets/icon/news.png",
                               color: primaryColor,
                               height: 1,
                               width: 1,
@@ -344,36 +346,112 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(
                       width: 10,
-                    ),
-                    InkWell(
+                    ),InkWell(
+                     
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            // builder: (_) => const SelfLockPage(),
+                            builder: (_) => const  FinanceHomeScreen(),
                           ),
                         );
                       },
                       child: Container(
-                        height: 105,
-                        width: 85,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 2,
-                            color: primaryColor,
+                          height: 85,
+                          width: 75,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            color: mobileBackgroundColor,
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                          color: mobileBackgroundColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15),
-                          child: Image.asset(
-                            'assets/icon/sign-in.png',
-                            color: primaryColor,
-                          ),
-                        ),
-                      ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Image.asset(
+                              "assets/icon/digital-wallet.png",
+                              color: primaryColor,
+                              height: 1,
+                              width: 1,
+                            ),
+                          )),
                     ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    
+                    
+                    
+                    InkWell(
+                     
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const NewsScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                          height: 85,
+                          width: 75,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            color: mobileBackgroundColor,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Image.asset(
+                              "assets/icon/app-lock.png",
+                              color: primaryColor,
+                              height: 1,
+                              width: 1,
+                            ),
+                          )),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    InkWell(
+                     
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const NewsScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                          height: 85,
+                          width: 75,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: primaryColor,
+                            ),
+                            color: mobileBackgroundColor,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Image.asset(
+                              "assets/icon/news.png",
+                              color: primaryColor,
+                              height: 1,
+                              width: 1,
+                            ),
+                          )),
+                    ),
+                    const SizedBox(
+                      width: 0,
+                    ),
+                   
                   ],
                 ),
                         ),
