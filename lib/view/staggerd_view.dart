@@ -4,6 +4,7 @@ import 'package:my_assist/view/Gallery/photo_gallery.dart';
 import 'package:my_assist/view/LockUp/self_lock.dart';
 import 'package:my_assist/view/file_saver/file_saver.dart';
 import 'package:my_assist/view/finance/finance.dart';
+import 'package:my_assist/view/vault/pages/vault_gate.dart';
 // import 'package:my_assist/view/vault/pages/vault_gate.dart';
 
 class StaggerdView extends StatelessWidget {
@@ -48,7 +49,7 @@ class StaggerdView extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const FinanceHomeScreen()
+                            builder: (_) => const VaultGate()
                             ));
                   },
                   child: Container(
