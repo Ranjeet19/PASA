@@ -3,6 +3,7 @@ import 'dart:async';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_assist/view/LockUp/self_lock.dart';
 import 'package:my_assist/view/drawer.dart';
 import 'package:my_assist/view/finance/finance.dart';
 import 'package:my_assist/view/news.dart';
@@ -390,7 +391,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const VaultGate(),
+                            builder: (_) => const SelfLockPage(),
                           ),
                         );
                       },

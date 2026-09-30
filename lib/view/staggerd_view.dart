@@ -49,7 +49,7 @@ class StaggerdView extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const VaultGate()
+                            builder: (_) => const SelfLockPage()
                             ));
                   },
                   child: Container(
@@ -122,7 +122,7 @@ class StaggerdView extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const SelfLockPage(),
+                            builder: (_) => const VaultGate(),
                           ),
                         );
                       },
