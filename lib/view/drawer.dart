@@ -97,7 +97,7 @@ class Draw extends StatelessWidget {
                   );
                 },
                 leading: const Icon(
-                  CupertinoIcons.heart,
+                  CupertinoIcons.heart_fill,
                   color: primaryColor,
                 ),
                 title: const Text(
