@@ -172,8 +172,8 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(
-                    height: 80,
-                    width: 80,
+                    height: 81,
+                    width: 81,
                     child: Stack(
                       children: [
                         // Positioned(
