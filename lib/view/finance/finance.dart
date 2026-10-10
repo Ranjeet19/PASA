@@ -187,7 +187,7 @@ class _FinanceHomeScreenState extends State<FinanceHomeScreen> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black)),
-                          Text('See all',
+                          Text('See all..',
                               style: TextStyle(
                                   color: mobileBackgroundColor,
                                   fontWeight: FontWeight.w600,
