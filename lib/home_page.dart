@@ -14,7 +14,7 @@ import 'package:my_assist/view/staggerd_view.dart';
 import 'package:my_assist/view/task_listtile.dart';
 import 'package:my_assist/utils/colors.dart';
 import 'package:my_assist/services/user_profile.dart';
-import 'package:my_assist/view/vault/pages/vault_gate.dart';
+// import 'package:my_assist/view/vault/pages/vault_gate.dart';
 
 class HomePage extends StatefulWidget {
   // HoroscopeCard horo;
