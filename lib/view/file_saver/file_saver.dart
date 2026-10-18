@@ -359,7 +359,7 @@ class _FileSaverPageState extends State<FileSaverPage> {
                           BorderRadius.circular(20),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 21),
                   Text(
                     title,
                     style: const TextStyle(
