@@ -187,7 +187,7 @@ class CountdownTileState extends State<CountdownTile> {
         _countdown = 'Expired';
       } else {
         _countdown =
-            '$days days, $hours hours, $minutes minutes, $seconds seconds';
+            '| $days d | $hours h | $minutes m | $seconds s |';
       }
     });
   }
@@ -214,7 +214,7 @@ class CountdownTileState extends State<CountdownTile> {
                   child: Text(
                     _countdown,
                     style: const TextStyle(
-                      fontSize: 32,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
