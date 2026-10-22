@@ -53,7 +53,7 @@ class StaggerdView extends StatelessWidget {
                             ));
                   },
                   child: Container(
-                    height: 105,
+                    height: 100,
                     width: 180,
                     decoration: BoxDecoration(
                       border: Border.all(
